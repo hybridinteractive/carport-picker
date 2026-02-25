@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "imports": {
+    "#internal/nuxt/paths": "./node_modules/.pnpm/@nuxt+nitro-server@3.21.1_@libsql+client@0.14.0_db0@0.3.4_@libsql+client@0.14.0_drizzle_152230e1bb41901362e2ffcb35422820/node_modules/@nuxt/nitro-server/dist/runtime/utils/paths.mjs"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
