@@ -5,6 +5,12 @@ export interface ChatMessage {
   content: string
 }
 
+export interface ChatSessionSummary {
+  session_id: string
+  created_at: Date | string
+  updated_at: Date | string
+}
+
 export interface UseChatOptions {
   /** Restore and load history for this session (e.g. from route query or localStorage) */
   initialSessionId?: string | null
@@ -42,6 +48,37 @@ export function useChat(options: UseChatOptions = {}) {
     }
   }
 
+  async function linkSessionToEmail(email: string) {
+    const sid = sessionId.value
+    if (!sid?.trim()) {
+      error.value = 'No active chat session to link'
+      return
+    }
+    const trimmed = email.trim()
+    if (!trimmed) {
+      error.value = 'Email is required'
+      return
+    }
+    error.value = null
+    try {
+      await $fetch('/api/chat/link', {
+        method: 'POST',
+        body: { session_id: sid, email: trimmed },
+      })
+    } catch (e: unknown) {
+      const err = e as { data?: { statusMessage?: string }; message?: string }
+      error.value = err?.data?.statusMessage ?? err?.message ?? 'Failed to link chat to email'
+      throw e
+    }
+  }
+
+  async function fetchSessionsByEmail(email: string): Promise<ChatSessionSummary[]> {
+    const trimmed = email.trim()
+    if (!trimmed) return []
+    const res = await $fetch<ChatSessionSummary[]>('/api/chat/sessions', { query: { email: trimmed } })
+    return res ?? []
+  }
+
   async function send(userContent: string) {
     if (!userContent.trim() || loading.value) return
     const content = userContent.trim()
@@ -72,5 +109,15 @@ export function useChat(options: UseChatOptions = {}) {
     }
   })
 
-  return { messages, sessionId, loading, loadingHistory, error, send, loadHistory }
+  return {
+    messages,
+    sessionId,
+    loading,
+    loadingHistory,
+    error,
+    send,
+    loadHistory,
+    linkSessionToEmail,
+    fetchSessionsByEmail,
+  }
 }

@@ -8,6 +8,13 @@
       "when": 1772041568657,
       "tag": "0000_petite_thunderbolts",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1730000000000,
+      "tag": "0001_add_chat_sessions_email",
+      "breakpoints": true
     }
   ]
 }
