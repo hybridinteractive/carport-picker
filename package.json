@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "imports": {
-    "#internal/nuxt/paths": "./node_modules/@nuxt/nitro-server/dist/runtime/utils/paths.mjs"
+    "#internal/nuxt/paths": "/Users/mark/Sites/Apps/carport-picker/node_modules/@nuxt/nitro-server/dist/runtime/utils/paths.mjs"
   },
   "scripts": {
     "build": "nuxt build",
