@@ -1,6 +1,16 @@
 {
   "name": "Patio Covers",
-  "description": "Premium aluminum patio covers for shade and outdoor living. Styles include entry/walkway, awnings, add-a-room, balconies; corner units and side panels available.",
+  "description": "Premium aluminum patio covers for shade and outdoor living. Styles include entry/walkway, awnings, add-a-room, balconies; corner units and side panels available. Straight or curved rafters; wall-mount or roof-mount.",
+  "descriptionLong": "REVOLU and other Japanese aluminum patio systems from Sankyo-Tateyama. Straight rafters with strong gutter beam; posts can be positioned to suit. Width can be extended seamlessly. Standard width 12'; 18' units available. Typically wall-mounted; roof-mount possible with ledgers and brackets. Panel widths vary by projection (e.g. 36\" for 3'–8', 18\" for 9'–20'). Shop drawings and structural reports available from Japan.",
   "series": ["REVOLU TF1NA", "REVOLU TR1NA", "REVOLU TF1MA", "REVOLU TR1MA", "Wood-Look", "Side Panels"],
-  "options": ["Roof mounting", "Panel types", "Custom installation", "Corner units"]
+  "options": ["Roof mounting", "Panel types (clear, frosted, etc.)", "Custom installation", "Corner units", "Side panels", "Wall-mount or roof-mount"],
+  "sizes": [
+    "Projections: 3' to 20' (REVOLU); panel width 36\" for 3'–8', 18\" for 9'–20'",
+    "Width: regular 12'; 18' units available; extendable",
+    "Rafter sizes designed for projection; structural reports on request"
+  ],
+  "finishes": ["Clear and frosted panels", "Wood-look option", "Color and finish options; see Product Details on KunkelWorks"],
+  "priceNote": "Pricing by configuration; email specific requirements for quote.",
+  "benefits": ["Shade and rain protection", "Low maintenance", "Corrosion resistant", "Custom fit and extensions", "Japanese quality"],
+  "attribution": "Product info from KunkelWorks (kunkelworks.com). For details and pricing: info@kunkelworks.com."
 }

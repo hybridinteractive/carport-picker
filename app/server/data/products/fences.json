@@ -1,5 +1,13 @@
 {
   "name": "Fences",
-  "description": "Aluminum fences: styles, railings, privacy walls, stacking, lifting fence; custom fit.",
-  "styles": ["Fence styles", "Railings", "Privacy walls", "Stacking", "Lifting fence", "Custom fit"]
+  "description": "Aluminum fences: styles, railings, privacy walls, stacking, and lifting fence. Custom fit. Japanese aluminum—corrosion resistant and maintenance-free.",
+  "descriptionLong": "Sankyo-Tateyama aluminum fence systems from KunkelWorks. Multiple styles including railings, privacy walls, stacking, and lifting fence. Custom fit to your site. Same high-grade materials and quality control as carports and patio covers—resilient to humidity, rain, sea salt, and intense sunshine.",
+  "series": [],
+  "styles": ["Fence styles", "Railings", "Privacy walls", "Stacking", "Lifting fence", "Custom fit"],
+  "options": ["Custom fit", "Privacy panels", "Railings", "Stacking and lifting options"],
+  "sizes": ["Custom lengths and heights; specify dimensions for quote"],
+  "finishes": ["Anodized and coated aluminum; color options available"],
+  "priceNote": "Pricing by length, height, and style; email requirements for quote.",
+  "benefits": ["Corrosion resistant", "Maintenance-free", "Privacy and security", "Custom fit", "Japanese quality"],
+  "attribution": "Product info from KunkelWorks (kunkelworks.com). For details and pricing: info@kunkelworks.com."
 }

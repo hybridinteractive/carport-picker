@@ -1,5 +1,13 @@
 {
   "name": "Entry Doors",
-  "description": "Elegant and secure aluminum entry doors. Enhanced security, elegant design, weather resistant. Japanese aluminum quality.",
-  "benefits": ["Enhanced security", "Elegant design", "Weather resistant"]
+  "description": "Japanese aluminum entry doors from Sankyo-Tateyama. A major portion of their product line; KunkelWorks is introducing these systems to the US market. Enhanced security, elegant design, weather resistant.",
+  "descriptionLong": "Entry doors are a major portion of Sankyo Tateyama products. KunkelWorks is introducing these aluminum entry doors to the US market. Ventilated door and other styles available. Same meticulous Japanese fabrication—resistant to weather and wear.",
+  "series": [],
+  "styles": ["Ventilated door", "Additional styles in Japanese catalogs"],
+  "options": ["Ventilated options", "Custom sizing and hardware"],
+  "sizes": ["Custom sizes; specify for quote"],
+  "finishes": ["Aluminum; finish and color options; see Product Details"],
+  "priceNote": "Pricing by size and style; email requirements for quote.",
+  "benefits": ["Enhanced security", "Elegant design", "Weather resistant", "Japanese aluminum quality"],
+  "attribution": "Product info from KunkelWorks (kunkelworks.com). For details and pricing: info@kunkelworks.com."
 }

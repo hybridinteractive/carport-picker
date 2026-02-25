@@ -1,10 +1,16 @@
 {
   "name": "Carports",
-  "description": "Premium Japanese aluminum carports engineered for durability. Single, double, and triple configurations; residential and commercial; roof-mount and freestanding.",
-  "series": [
-    "PJR Series", "PJF Series", "ELN Series", "MLR Series", "LJ Series", "KWC Series",
-    "SKC Port", "U-Style Port", "GSS Port", "CSS Series", "RSC Port", "UEC Port",
-    "ATLD Port", "SAE Port", "MTS Port"
+  "description": "Premium Japanese aluminum carports engineered for durability. Single, double, and triple configurations; residential and commercial; roof-mount and freestanding. Manufactured by Sankyo-Tateyama (Takaoka, Japan)—corrosion resistant and maintenance-free.",
+  "descriptionLong": "KunkelWorks is the official distributor of authentic Japanese aluminum carports. Systems are meticulously crafted, tested, and inspected for shape, surface, color, and assembly. Resilient to humidity, rain, sea salt, and intense sunshine. Popular series include the PJR (soft curved roof, versatile for cantilever/double/triple), ELN (curved roofline on gutter side for extra shade and rain block), and many others. Side panels, roof mounting, and hurricane anchors available.",
+  "series": ["PJR Series", "PJF Series", "ELN Series", "MLR Series", "LJ Series", "KWC Series", "SKC Port", "U-Style Port", "GSS Port", "CSS Series", "RSC Port", "UEC Port", "ATLD Port", "SAE Port", "MTS Port"],
+  "options": ["Side panels", "Roof mounting", "Custom installation", "Hurricane anchors", "Polycarbonate panels", "Aluminum roof panels"],
+  "sizes": [
+    "Cantilever: projections 18/22/24/27/30/33 (×100mm); double 48/54/60/66; triple 72/80 (×100mm)",
+    "Length units: 22/29/43/51/57 (×100mm); height 18/22/25/28 (×100mm)",
+    "ELN: cantilever 20/24/27/30/33; double 48/54/60; length 29/51/58; height 19/23/28 (×100mm)"
   ],
-  "options": ["Side panels", "Roof mounting", "Custom installation", "Hurricane anchors"]
+  "finishes": ["Five polycarbonate panel styles", "Aluminum roof panels (selected series)", "Anodized and coated aluminum; color options vary by series"],
+  "priceNote": "Typical ranges by configuration (e.g. PJR cantilever ~$5k–$7k, double ~$8k–$10k, triple ~$11k–$13k; ELN in similar ranges). Contact for exact pricing.",
+  "benefits": ["Corrosion resistant", "Maintenance-free", "Residential and commercial", "Hurricane anchors available", "Japanese fabrication quality"],
+  "attribution": "Product info from KunkelWorks (kunkelworks.com). For detailed specs and pricing: info@kunkelworks.com."
 }

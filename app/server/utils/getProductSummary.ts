@@ -17,18 +17,27 @@ const products = [
 interface ProductGroup {
   name: string
   description: string
+  descriptionLong?: string
   series?: string[]
   styles?: string[]
   options?: string[]
   benefits?: string[]
+  sizes?: string[]
+  finishes?: string[]
+  priceNote?: string
+  attribution?: string
 }
 
 function formatGroup(p: ProductGroup): string {
   const parts = [`## ${p.name}\n${p.description}`]
+  if (p.descriptionLong) parts.push(p.descriptionLong)
   if (p.series?.length) parts.push(`Series: ${p.series.join(', ')}`)
   if (p.styles?.length) parts.push(`Styles: ${p.styles.join(', ')}`)
   if (p.options?.length) parts.push(`Options: ${p.options.join(', ')}`)
+  if (p.sizes?.length) parts.push(`Sizes/dimensions: ${p.sizes.join('; ')}`)
+  if (p.finishes?.length) parts.push(`Finishes: ${p.finishes.join('; ')}`)
   if (p.benefits?.length) parts.push(`Benefits: ${p.benefits.join(', ')}`)
+  if (p.priceNote) parts.push(`Pricing: ${p.priceNote}`)
   return parts.join('\n')
 }
 

@@ -14,6 +14,11 @@ const series = computed(() => (product.value?.series as string[]) ?? [])
 const styles = computed(() => (product.value?.styles as string[]) ?? [])
 const options = computed(() => (product.value?.options as string[]) ?? [])
 const benefits = computed(() => (product.value?.benefits as string[]) ?? [])
+const sizes = computed(() => (product.value?.sizes as string[]) ?? [])
+const finishes = computed(() => (product.value?.finishes as string[]) ?? [])
+const descriptionLong = computed(() => (product.value?.descriptionLong as string) ?? '')
+const priceNote = computed(() => (product.value?.priceNote as string) ?? '')
+const attribution = computed(() => (product.value?.attribution as string) ?? '')
 </script>
 
 <template>
@@ -22,6 +27,7 @@ const benefits = computed(() => (product.value?.benefits as string[]) ?? [])
     <template v-if="product">
       <h1 class="mt-4 text-3xl font-bold text-stone-900">{{ product.name }}</h1>
       <p class="mt-2 text-stone-600">{{ product.description }}</p>
+      <p v-if="descriptionLong" class="mt-4 text-stone-600">{{ descriptionLong }}</p>
       <div class="mt-8 space-y-4">
         <section v-if="series.length">
           <h2 class="text-lg font-semibold text-stone-800">Series</h2>
@@ -33,6 +39,18 @@ const benefits = computed(() => (product.value?.benefits as string[]) ?? [])
           <h2 class="text-lg font-semibold text-stone-800">Styles</h2>
           <ul class="mt-2 list-inside list-disc text-stone-600">
             <li v-for="s in styles" :key="s">{{ s }}</li>
+          </ul>
+        </section>
+        <section v-if="sizes.length">
+          <h2 class="text-lg font-semibold text-stone-800">Sizes & dimensions</h2>
+          <ul class="mt-2 list-inside list-disc text-stone-600">
+            <li v-for="s in sizes" :key="s">{{ s }}</li>
+          </ul>
+        </section>
+        <section v-if="finishes.length">
+          <h2 class="text-lg font-semibold text-stone-800">Finishes</h2>
+          <ul class="mt-2 list-inside list-disc text-stone-600">
+            <li v-for="f in finishes" :key="f">{{ f }}</li>
           </ul>
         </section>
         <section v-if="options.length">
@@ -47,6 +65,8 @@ const benefits = computed(() => (product.value?.benefits as string[]) ?? [])
             <li v-for="b in benefits" :key="b">{{ b }}</li>
           </ul>
         </section>
+        <p v-if="priceNote" class="mt-4 text-sm text-stone-500">{{ priceNote }}</p>
+        <p v-if="attribution" class="mt-2 text-xs text-stone-400">{{ attribution }}</p>
       </div>
       <div class="mt-10 flex gap-4">
         <NuxtLink

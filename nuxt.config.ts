@@ -7,6 +7,11 @@ export default defineNuxtConfig({
   devServer: { port: 3000 },
   srcDir: 'app',
 
+  // Avoid "Failed to resolve import #app-manifest" when using pnpm (Nuxt internal alias not resolved in node_modules).
+  experimental: {
+    appManifest: false,
+  },
+
   app: {
     head: {
       titleTemplate: '%s | Carport Picker',
@@ -55,6 +60,10 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'cloudflare-pages',
     scanDirs: ['app/server'],
+    alias: {
+      // Resolve at bundle time so we don't rely on package.json "imports" at runtime (avoids pnpm/Node "Invalid imports target").
+      '#internal/nuxt/paths': './node_modules/@nuxt/nitro-server/dist/runtime/utils/paths.mjs',
+    },
     rollupConfig: {
       external: ['fs', 'path', 'sharp'],
     },

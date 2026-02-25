@@ -1,5 +1,13 @@
 {
   "name": "Gates",
-  "description": "Entry gates, driveway gates, and pool gates. Custom fit, outward opening, spacers/stationary options; custom fabrication and lock options.",
-  "styles": ["Entry gate styles", "Driveway gates", "Pool gates", "Outward opening", "Spacers/stationary", "Custom fabrication", "Lock options"]
+  "description": "Japanese aluminum entry gates, driveway gates, and pool gates. Custom fit, outward opening, spacers/stationary options; custom fabrication and lock options. Corrosion resistant and maintenance-free.",
+  "descriptionLong": "Sankyo-Tateyama aluminum gate systems distributed by KunkelWorks. Entry gate styles, driveway gates, and pool gates; custom fit and outward opening. Spacers and stationary panels available. Custom fabrication and lock options. Same meticulous Japanese fabrication as carports and patio covers—resilient to humidity, salt, and sun.",
+  "series": [],
+  "styles": ["Entry gate styles", "Driveway gates", "Pool gates", "Outward opening", "Spacers/stationary", "Custom fabrication", "Lock options"],
+  "options": ["Custom fit", "Outward opening", "Spacers and stationary panels", "Custom fabrication", "Lock options"],
+  "sizes": ["Custom sizes to fit opening; specify dimensions for quote"],
+  "finishes": ["Anodized and coated aluminum; color options available"],
+  "priceNote": "Pricing by size and options; email requirements for quote.",
+  "benefits": ["Corrosion resistant", "Maintenance-free", "Secure", "Custom fit", "Japanese quality"],
+  "attribution": "Product info from KunkelWorks (kunkelworks.com). For details and pricing: info@kunkelworks.com."
 }
