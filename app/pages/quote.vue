@@ -14,7 +14,6 @@ const productOptions = [
   { value: '', label: 'Select…' },
   { value: 'carports', label: 'Carports' },
   { value: 'patio-covers', label: 'Patio Covers' },
-  { value: 'pool-covers', label: 'Pool Covers' },
   { value: 'gates', label: 'Gates' },
   { value: 'fences', label: 'Fences' },
   { value: 'entry-doors', label: 'Entry Doors' },

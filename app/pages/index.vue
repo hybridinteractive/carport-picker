@@ -2,7 +2,6 @@
 const categories = [
   { title: 'Carports', description: 'Single, double & triple — protect your vehicles.', to: '/products/carports', icon: '🚗' },
   { title: 'Patio Covers', description: 'Shade and style for outdoor living.', to: '/products/patio-covers', icon: '🏡' },
-  { title: 'Pool Covers', description: 'Protect and enhance your pool area.', to: '/products/pool-covers', icon: '🏊' },
   { title: 'Gates & Fences', description: 'Entry gates, driveway gates, railings.', to: '/products/gates', icon: '🚧' },
   { title: 'Entry Doors', description: 'Elegant, secure aluminum entry doors.', to: '/products/entry-doors', icon: '🚪' },
 ]

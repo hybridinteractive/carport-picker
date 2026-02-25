@@ -19,50 +19,83 @@ const finishes = computed(() => (product.value?.finishes as string[]) ?? [])
 const descriptionLong = computed(() => (product.value?.descriptionLong as string) ?? '')
 const priceNote = computed(() => (product.value?.priceNote as string) ?? '')
 const attribution = computed(() => (product.value?.attribution as string) ?? '')
+const image = computed(() => (product.value?.image as string) ?? '')
+const galleryUrl = computed(() => (product.value?.galleryUrl as string) ?? '')
+const seriesDetails = computed(() => (product.value?.seriesDetails as Record<string, { name: string; description?: string; galleryUrl?: string; detailUrl?: string }>) ?? {})
+const seriesEntries = computed(() => Object.entries(seriesDetails.value))
+const isSeriesRoute = computed(() => !!route.params.series)
 </script>
 
 <template>
   <div class="mx-auto max-w-4xl px-4 py-12">
     <NuxtLink to="/products" class="text-sm font-medium text-amber-700 hover:underline">← Products</NuxtLink>
-    <template v-if="product">
+    <!-- Child route: /products/carports/pjr renders [series].vue here -->
+    <NuxtPage v-if="isSeriesRoute" />
+    <template v-else-if="product">
+      <img
+        v-if="image"
+        :src="image"
+        :alt="product.name"
+        class="mt-4 w-full rounded-lg object-cover shadow-md"
+        width="800"
+        height="400"
+      />
       <h1 class="mt-4 text-3xl font-bold text-stone-900">{{ product.name }}</h1>
       <p class="mt-2 text-stone-600">{{ product.description }}</p>
       <p v-if="descriptionLong" class="mt-4 text-stone-600">{{ descriptionLong }}</p>
+      <a
+        v-if="galleryUrl"
+        :href="galleryUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-amber-700 hover:underline"
+      >
+        View photo gallery on KunkelWorks
+        <span aria-hidden="true">↗</span>
+      </a>
       <div class="mt-8 space-y-4">
-        <section v-if="series.length">
+        <section v-if="(seriesEntries ?? []).length">
+          <h2 class="text-lg font-semibold text-stone-800">Series</h2>
+          <ul class="mt-2 space-y-1 text-stone-600">
+            <li v-for="[seriesSlug, info] in (seriesEntries ?? [])" :key="seriesSlug">
+              <NuxtLink :to="`/products/${slug}/${seriesSlug}`" class="text-amber-700 hover:underline">{{ info?.name }}</NuxtLink>
+            </li>
+          </ul>
+        </section>
+        <section v-else-if="(series ?? []).length">
           <h2 class="text-lg font-semibold text-stone-800">Series</h2>
           <ul class="mt-2 list-inside list-disc text-stone-600">
-            <li v-for="s in series" :key="s">{{ s }}</li>
+            <li v-for="s in (series ?? [])" :key="s">{{ s }}</li>
           </ul>
         </section>
-        <section v-if="styles.length">
+        <section v-if="(styles ?? []).length">
           <h2 class="text-lg font-semibold text-stone-800">Styles</h2>
           <ul class="mt-2 list-inside list-disc text-stone-600">
-            <li v-for="s in styles" :key="s">{{ s }}</li>
+            <li v-for="s in (styles ?? [])" :key="s">{{ s }}</li>
           </ul>
         </section>
-        <section v-if="sizes.length">
+        <section v-if="(sizes ?? []).length">
           <h2 class="text-lg font-semibold text-stone-800">Sizes & dimensions</h2>
           <ul class="mt-2 list-inside list-disc text-stone-600">
-            <li v-for="s in sizes" :key="s">{{ s }}</li>
+            <li v-for="s in (sizes ?? [])" :key="s">{{ s }}</li>
           </ul>
         </section>
-        <section v-if="finishes.length">
+        <section v-if="(finishes ?? []).length">
           <h2 class="text-lg font-semibold text-stone-800">Finishes</h2>
           <ul class="mt-2 list-inside list-disc text-stone-600">
-            <li v-for="f in finishes" :key="f">{{ f }}</li>
+            <li v-for="f in (finishes ?? [])" :key="f">{{ f }}</li>
           </ul>
         </section>
-        <section v-if="options.length">
+        <section v-if="(options ?? []).length">
           <h2 class="text-lg font-semibold text-stone-800">Options</h2>
           <ul class="mt-2 list-inside list-disc text-stone-600">
-            <li v-for="o in options" :key="o">{{ o }}</li>
+            <li v-for="o in (options ?? [])" :key="o">{{ o }}</li>
           </ul>
         </section>
-        <section v-if="benefits.length">
+        <section v-if="(benefits ?? []).length">
           <h2 class="text-lg font-semibold text-stone-800">Benefits</h2>
           <ul class="mt-2 list-inside list-disc text-stone-600">
-            <li v-for="b in benefits" :key="b">{{ b }}</li>
+            <li v-for="b in (benefits ?? [])" :key="b">{{ b }}</li>
           </ul>
         </section>
         <p v-if="priceNote" class="mt-4 text-sm text-stone-500">{{ priceNote }}</p>

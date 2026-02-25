@@ -1,5 +1,7 @@
 {
   "name": "Carports",
+  "image": "https://placehold.co/800x500/78716c/f5f5f4?text=Carports",
+  "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
   "description": "Premium Japanese aluminum carports engineered for durability. Single, double, and triple configurations; residential and commercial; roof-mount and freestanding. Manufactured by Sankyo-Tateyama (Takaoka, Japan)—corrosion resistant and maintenance-free.",
   "descriptionLong": "KunkelWorks is the official distributor of authentic Japanese aluminum carports. Systems are meticulously crafted, tested, and inspected for shape, surface, color, and assembly. Resilient to humidity, rain, sea salt, and intense sunshine. Popular series include the PJR (soft curved roof, versatile for cantilever/double/triple), ELN (curved roofline on gutter side for extra shade and rain block), and many others. Side panels, roof mounting, and hurricane anchors available.",
   "series": ["PJR Series", "PJF Series", "ELN Series", "MLR Series", "LJ Series", "KWC Series", "SKC Port", "U-Style Port", "GSS Port", "CSS Series", "RSC Port", "UEC Port", "ATLD Port", "SAE Port", "MTS Port"],
@@ -12,5 +14,100 @@
   "finishes": ["Five polycarbonate panel styles", "Aluminum roof panels (selected series)", "Anodized and coated aluminum; color options vary by series"],
   "priceNote": "Typical ranges by configuration (e.g. PJR cantilever ~$5k–$7k, double ~$8k–$10k, triple ~$11k–$13k; ELN in similar ranges). Contact for exact pricing.",
   "benefits": ["Corrosion resistant", "Maintenance-free", "Residential and commercial", "Hurricane anchors available", "Japanese fabrication quality"],
-  "attribution": "Product info from KunkelWorks (kunkelworks.com). For detailed specs and pricing: info@kunkelworks.com."
+  "attribution": "Product info from KunkelWorks (kunkelworks.com). For detailed specs and pricing: info@kunkelworks.com.",
+  "seriesDetails": {
+    "pjr": {
+      "name": "PJR Series",
+      "description": "The PJR is the crowd favorite in Hawaii and Japan. The soft curved roof is highly attractive next to any home. The PJR is also very versatile. Single cantilever, double and triple ports can be combined for large development parking structures. In addition to five different polycarbonate panel styles, aluminum roof panels are also available since 2019.",
+      "sizes": ["Cantilever: projections 18/22/24/27/30/33 (×100mm)", "Double: projections 48/54/60/66 (×100mm)", "Triple: projections 72/80 (×100mm)", "Length units: 22/29/43/51/57 (×100mm)", "Height: 18/22/25/28 (×100mm)"],
+      "priceRange": "Cantilever $5,000–$7,000; Double $8,000–$10,000; Triple $11,000–$13,000",
+      "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
+      "detailUrl": "https://www.kunkelworks.com/pjr/",
+      "pdfUrl": "https://www.kunkelworks.com/s/PJR-PORT-2019.pdf"
+    },
+    "eln": {
+      "name": "ELN Series",
+      "description": "The ELN Port has a roofline that curves down on the gutter side. This creates a kind of side panel, blocking out more sun and rain. Like for all ports, there are side panels available that can be added to the posts. You can select a bicycle, single cantilever, or a double port.",
+      "sizes": ["Cantilever projections: 20/24/27/30/33 (×100mm)", "Double projections: 48/54/60 (×100mm)", "Length units: 29/51/58 (×100mm)", "Height: 19/23/28 (×100mm)"],
+      "priceRange": "Cantilever $6,000–$8,200; Double $9,800–$12,000",
+      "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
+      "detailUrl": "https://www.kunkelworks.com/eln-series/",
+      "pdfUrl": "https://www.kunkelworks.com/s/ELN-PORT.pdf"
+    },
+    "pjf": {
+      "name": "PJF Series",
+      "description": "The PJF Port features a traditional straight roofline. Available are bicycle ports, single cantilever and double ports in various sizes. In addition to five polycarbonate panel options, the PJF can have aluminum roof panels.",
+      "sizes": ["Cantilever projections: 19/22/24/27/30/33 (×100mm)", "Double projections: 48/54/60/66 (×100mm)", "Length units: 22/29/43/51/58 (×100mm)", "Height: 20/22/25/28 (×100mm)"],
+      "priceRange": "Cantilever $5,400–$7,300; Double $9,000–$10,800",
+      "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
+      "detailUrl": "https://www.kunkelworks.com/pjf-series/",
+      "pdfUrl": "https://www.kunkelworks.com/s/PJF-PORT-2019.pdf"
+    },
+    "mlr": {
+      "name": "MLR Series",
+      "description": "The MLR creates a slanted roof with the help of risers. This feature makes it possible to reverse the slope to the opposite direction if site condition would make that advantageous. The MLR can also have an extended cross beam to help move post locations out of the way. Bicycle, cantilever and double ports are available.",
+      "sizes": ["Cantilever projections: 19/22/25/28/31/34 (×100mm)", "Double projections: 48/54/60/66 (×100mm)", "Length units: 22/43/51/58 (×100mm)", "Height: 20/25/28 (×100mm)"],
+      "priceRange": "Cantilever $6,000–$8,000; Double $10,000–$12,000",
+      "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
+      "detailUrl": "https://www.kunkelworks.com/mlr-series/",
+      "pdfUrl": "https://www.kunkelworks.com/s/MLR-PORT-2019.pdf"
+    },
+    "lj": {
+      "name": "LJ Series",
+      "description": "While most Japanese ports have roofs sloping towards the sides, the LJ carport slopes its roof from the back to the front. The result is a perfectly straight edge from the front which might be preferable for specific home designs. The panel system has been upgraded and no longer needs purlins to support the panels, creating a more open look.",
+      "sizes": ["Cantilever projections: 24/25/28/31/33 (×100mm)", "Double projections: 42/54/60 (×100mm)", "Triple projections: 72/80 (×100mm)", "Length units: 50/54/58 (×100mm)", "Height: 23/25/28 (×100mm)"],
+      "priceRange": "Cantilever $6,000–$8,000; Double $9,500–$11,500; Triple $12,500–$15,500",
+      "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
+      "detailUrl": "https://www.kunkelworks.com/lj-series/",
+      "pdfUrl": "https://www.kunkelworks.com/s/LJ-PORT-2019.pdf"
+    },
+    "kwc": {
+      "name": "KWC Series",
+      "description": "The KWC Specialty Port can cantilever 18' to the front. You can park two cars under it in either direction. It has its posts only on one side, which can keep a driveway free of posts and solve setback issues when posts are not allowed close to the property line.",
+      "sizes": ["Cantilever projection: 5385mm (18')", "Length units: 51/59 (×100mm)", "Height: 21/24 (×100mm)"],
+      "priceRange": "Cantilever $11,500–$12,500",
+      "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
+      "detailUrl": "https://www.kunkelworks.com/kwc-series/",
+      "pdfUrl": "https://www.kunkelworks.com/s/KWC-PORT-2019.pdf"
+    },
+    "skc": {
+      "name": "SKC Port",
+      "description": "The SKC is a modern modular port that can be configured to cover a large area. It has superior wind resistance and can be outfitted with elegant side panels for additional protection and privacy.",
+      "sizes": ["Single: 49/55/61 × 3000mm", "Double: 49/55/61 × 5500/6000mm", "Height: 23/25/30 (×100mm)"],
+      "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
+      "detailUrl": "https://www.kunkelworks.com/skc-port/",
+      "pdfUrl": "https://www.kunkelworks.com/s/SKC-Series-PDF.pdf"
+    },
+    "ustyle": {
+      "name": "U-Style Port",
+      "description": "U-Style Ports use strong bearing beams and rectangular roof panel units. The roof panel system has been upgraded to no longer need purlins. Bearing beams can span up to 12 meters (39') between posts. Single, double and triple configurations.",
+      "sizes": ["Single projections: 15/18/21/24/27/30 (×100mm)", "Double projections: 36/48/54/60 (×100mm)", "Triple projections: 70/80/100 (×100mm)", "Length units: 48/54/60 (×100mm)", "Height: 21/26/30/35 (×100mm)"],
+      "priceRange": "Single $8,000–$9,000; Double $12,000–$14,000; Triple $16,000–$22,000",
+      "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
+      "detailUrl": "https://www.kunkelworks.com/ustyle-series/",
+      "pdfUrl": "https://www.kunkelworks.com/s/U-Style-PORT-2019.pdf"
+    },
+    "gss": {
+      "name": "GSS Port",
+      "description": "GSS is an aluminum port with a corrugated steel roof. It can handle various snow-loads as well as solar panels. The steel roof provides 100% shade. GSS comes as single, double and triple ports. Wood-laminate accents are available.",
+      "sizes": ["Single projections: 25/31 (×100mm)", "Double projections: 49/55/61 (×100mm)", "Triple projections: 8000mm", "Length units: 55/60 (×100mm)", "Height: 23/25/30 (×100mm)", "Snow-loads: 20/50/100/150/200cm"],
+      "priceRange": "Single $5,500–$6,500; Double $8,000–$9,500; Triple $11,000–$12,500",
+      "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
+      "detailUrl": "https://www.kunkelworks.com/gss-port/",
+      "pdfUrl": "https://www.kunkelworks.com/s/GSS-Port-2019.pdf"
+    },
+    "css": { "name": "CSS Series", "description": "CSS series.", "galleryUrl": "https://www.kunkelworks.com/carports-gallery", "detailUrl": "https://www.kunkelworks.com/css-port/" },
+    "rsc": {
+      "name": "RSC Port",
+      "description": "The only double port with only 2 posts. This port can overcome set-back issues when posts have to be away from the property lines while the roof can cantilever closer to the boundary. The unusual post locations also make it easier to get in and out.",
+      "sizes": ["Single projections: 24/27/30 (×100mm)", "Double projections: 48/54/60 (×100mm)", "Length units: 50/58 (×100mm)", "Height: 20/23 (×100mm)"],
+      "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
+      "detailUrl": "https://www.kunkelworks.com/rsc-series/",
+      "pdfUrl": "https://www.kunkelworks.com/s/RSC-Port-2019.pdf"
+    },
+    "uec": { "name": "UEC Port", "description": "UEC port.", "galleryUrl": "https://www.kunkelworks.com/carports-gallery", "detailUrl": "https://www.kunkelworks.com/uec-port/" },
+    "atld": { "name": "ATLD Port", "description": "ATLD port.", "galleryUrl": "https://www.kunkelworks.com/carports-gallery", "detailUrl": "https://www.kunkelworks.com/atld-port/" },
+    "sae": { "name": "SAE Port", "description": "SAE port.", "galleryUrl": "https://www.kunkelworks.com/carports-gallery", "detailUrl": "https://www.kunkelworks.com/sae-port/" },
+    "mts": { "name": "MTS Port", "description": "MTS port.", "galleryUrl": "https://www.kunkelworks.com/carports-gallery", "detailUrl": "https://www.kunkelworks.com/mts-port/" }
+  }
 }

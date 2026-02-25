@@ -1,6 +1,5 @@
 import carports from '../data/products/carports.json'
 import patioCovers from '../data/products/patio-covers.json'
-import poolCovers from '../data/products/pool-covers.json'
 import gates from '../data/products/gates.json'
 import fences from '../data/products/fences.json'
 import entryDoors from '../data/products/entry-doors.json'
@@ -8,11 +7,20 @@ import entryDoors from '../data/products/entry-doors.json'
 const products = [
   carports as ProductGroup,
   patioCovers as ProductGroup,
-  poolCovers as ProductGroup,
   gates as ProductGroup,
   fences as ProductGroup,
   entryDoors as ProductGroup,
 ]
+
+interface SeriesDetail {
+  name: string
+  description?: string
+  sizes?: string[]
+  priceRange?: string
+  pdfUrl?: string
+  detailUrl?: string
+  galleryUrl?: string
+}
 
 interface ProductGroup {
   name: string
@@ -26,6 +34,15 @@ interface ProductGroup {
   finishes?: string[]
   priceNote?: string
   attribution?: string
+  seriesDetails?: Record<string, SeriesDetail>
+}
+
+function formatSeriesDetail(key: string, s: SeriesDetail): string {
+  const parts = [`### ${s.name}`]
+  if (s.description) parts.push(s.description)
+  if (s.sizes?.length) parts.push(`Sizes: ${s.sizes.join('; ')}`)
+  if (s.priceRange) parts.push(`Price range: ${s.priceRange}`)
+  return parts.join('\n')
 }
 
 function formatGroup(p: ProductGroup): string {
@@ -38,6 +55,13 @@ function formatGroup(p: ProductGroup): string {
   if (p.finishes?.length) parts.push(`Finishes: ${p.finishes.join('; ')}`)
   if (p.benefits?.length) parts.push(`Benefits: ${p.benefits.join(', ')}`)
   if (p.priceNote) parts.push(`Pricing: ${p.priceNote}`)
+  const details = p.seriesDetails ?? {}
+  if (Object.keys(details).length) {
+    parts.push('Series details (use for specific series questions):')
+    for (const [key, s] of Object.entries(details)) {
+      parts.push(formatSeriesDetail(key, s))
+    }
+  }
   return parts.join('\n')
 }
 
