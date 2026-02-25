@@ -1,0 +1,124 @@
+<script setup lang="ts">
+useHead({ title: 'Get a quote | Carport Picker' })
+const submitted = ref(false)
+const loading = ref(false)
+const error = ref<string | null>(null)
+const form = ref({
+  name: '',
+  email: '',
+  phone: '',
+  product_interest: '',
+  message: '',
+})
+const productOptions = [
+  { value: '', label: 'Select…' },
+  { value: 'carports', label: 'Carports' },
+  { value: 'patio-covers', label: 'Patio Covers' },
+  { value: 'pool-covers', label: 'Pool Covers' },
+  { value: 'gates', label: 'Gates' },
+  { value: 'fences', label: 'Fences' },
+  { value: 'entry-doors', label: 'Entry Doors' },
+]
+
+async function onSubmit() {
+  if (!form.value.name.trim()) return
+  if (!form.value.email?.trim() && !form.value.phone?.trim()) {
+    error.value = 'Please provide either email or phone.'
+    return
+  }
+  loading.value = true
+  error.value = null
+  try {
+    await $fetch('/api/quote', {
+      method: 'POST',
+      body: {
+        name: form.value.name.trim(),
+        email: form.value.email?.trim() || undefined,
+        phone: form.value.phone?.trim() || undefined,
+        message: form.value.message?.trim() || undefined,
+        product_interest: form.value.product_interest || undefined,
+      },
+    })
+    submitted.value = true
+  } catch (e: unknown) {
+    const err = e as { data?: { statusMessage?: string }; message?: string }
+    error.value = err?.data?.statusMessage ?? err?.message ?? 'Something went wrong'
+  } finally {
+    loading.value = false
+  }
+}
+</script>
+
+<template>
+  <div class="mx-auto max-w-xl px-4 py-12">
+    <h1 class="text-3xl font-bold text-stone-900">Get a quote</h1>
+    <p class="mt-2 text-stone-600">Tell us what you’re interested in and we’ll get back to you.</p>
+
+    <div v-if="submitted" class="mt-10 rounded-xl border border-amber-200 bg-amber-50 p-6 text-amber-900">
+      <p class="font-medium">Thank you!</p>
+      <p class="mt-2 text-sm">Your quote request has been submitted. We’ll be in touch shortly.</p>
+    </div>
+
+    <form v-else class="mt-10 space-y-4" @submit.prevent="onSubmit">
+      <div v-if="error" class="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">
+        {{ error }}
+      </div>
+      <div>
+        <label for="name" class="block text-sm font-medium text-stone-700">Name *</label>
+        <input
+          id="name"
+          v-model="form.name"
+          type="text"
+          required
+          class="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+        />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-stone-700">Email</label>
+        <input
+          id="email"
+          v-model="form.email"
+          type="email"
+          class="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+        />
+      </div>
+      <div>
+        <label for="phone" class="block text-sm font-medium text-stone-700">Phone</label>
+        <input
+          id="phone"
+          v-model="form.phone"
+          type="tel"
+          class="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+        />
+      </div>
+      <div>
+        <label for="product_interest" class="block text-sm font-medium text-stone-700">Product interest</label>
+        <select
+          id="product_interest"
+          v-model="form.product_interest"
+          class="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+        >
+          <option v-for="opt in productOptions" :key="opt.value" :value="opt.value">
+            {{ opt.label }}
+          </option>
+        </select>
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium text-stone-700">Message</label>
+        <textarea
+          id="message"
+          v-model="form.message"
+          rows="4"
+          class="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+        />
+      </div>
+      <button
+        type="submit"
+        class="w-full rounded-lg bg-amber-600 py-2.5 font-medium text-white hover:bg-amber-700 disabled:opacity-50"
+        :disabled="loading"
+      >
+        {{ loading ? 'Sending…' : 'Submit' }}
+      </button>
+    </form>
+  </div>
+</template>

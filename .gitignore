@@ -11,3 +11,10 @@
 .cursorignore
 .cursorignore
 .agents
+node_modules
+.nuxt
+.pnpm-store
+dist
+
+# Sentry Config File
+.env.sentry-build-plugin

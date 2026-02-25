@@ -1,0 +1,10 @@
+{
+  "name": "Carports",
+  "description": "Premium Japanese aluminum carports engineered for durability. Single, double, and triple configurations; residential and commercial; roof-mount and freestanding.",
+  "series": [
+    "PJR Series", "PJF Series", "ELN Series", "MLR Series", "LJ Series", "KWC Series",
+    "SKC Port", "U-Style Port", "GSS Port", "CSS Series", "RSC Port", "UEC Port",
+    "ATLD Port", "SAE Port", "MTS Port"
+  ],
+  "options": ["Side panels", "Roof mounting", "Custom installation", "Hurricane anchors"]
+}
