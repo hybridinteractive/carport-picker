@@ -31,7 +31,7 @@ interface ChatSessionWithMessages {
 }
 
 const lead = ref<Lead | null>(null)
-const conversations = ref<ChatSessionWithMessages[]>([])
+const conversation = ref<ChatSessionWithMessages | null>(null)
 const loading = ref(true)
 const error = ref('')
 
@@ -58,45 +58,22 @@ async function loadLead() {
   }
   loading.value = true
   error.value = ''
-  conversations.value = []
+  conversation.value = null
   try {
     lead.value = await fetchWithAuth<Lead>(`/api/admin/leads/${id.value}`)
     const l = lead.value
-    if (!l) return
-
-    const sessionsByEmail: Array<{ session_id: string; updated_at: string }> = []
-    if (l.email?.trim()) {
-      const list = await fetchWithAuth<Array<{ session_id: string; updated_at: string }>>(
-        `/api/admin/sessions-by-email?email=${encodeURIComponent(l.email.trim())}`
-      )
-      sessionsByEmail.push(...list)
+    if (!l?.chat_session_id) {
+      loading.value = false
+      return
     }
-    const linkedId = l.chat_session_id ?? ''
-    if (linkedId && !sessionsByEmail.some((s) => s.session_id === linkedId)) {
-      sessionsByEmail.unshift({ session_id: linkedId, updated_at: l.created_at })
+    const chat = await fetchWithAuth<{ session_id: string; messages: ChatMessage[] }>(
+      `/api/admin/chat/${encodeURIComponent(l.chat_session_id)}`
+    )
+    conversation.value = {
+      session_id: chat.session_id,
+      updated_at: l.created_at,
+      messages: chat.messages ?? [],
     }
-
-    const loaded: ChatSessionWithMessages[] = []
-    for (const s of sessionsByEmail) {
-      try {
-        const chat = await fetchWithAuth<{ session_id: string; messages: ChatMessage[] }>(
-          `/api/admin/chat/${encodeURIComponent(s.session_id)}`
-        )
-        loaded.push({
-          session_id: chat.session_id,
-          updated_at: s.updated_at,
-          messages: chat.messages ?? [],
-        })
-      } catch {
-        // skip sessions that fail to load
-      }
-    }
-    loaded.sort((a, b) => {
-      if (a.session_id === linkedId) return -1
-      if (b.session_id === linkedId) return 1
-      return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
-    })
-    conversations.value = loaded
   } catch (e: unknown) {
     const err = e as { statusCode?: number }
     if (err?.statusCode === 401) {
@@ -123,11 +100,6 @@ function formatDate(d: string) {
   })
 }
 
-function sessionLabel(session: ChatSessionWithMessages) {
-  return lead.value?.chat_session_id === session.session_id
-    ? 'Conversation (linked to this quote)'
-    : 'Other conversation'
-}
 </script>
 
 <template>
@@ -181,28 +153,24 @@ function sessionLabel(session: ChatSessionWithMessages) {
         </div>
       </div>
 
-      <template v-for="(conv, cIdx) in conversations" :key="conv.session_id">
-        <section v-if="conv.messages.length > 0" class="mt-8">
-          <h2 class="mb-4 text-lg font-semibold text-stone-800">
-            {{ sessionLabel(conv) }}
-          </h2>
-          <div class="space-y-3 rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
-            <div
-              v-for="(msg, i) in conv.messages"
-              :key="`${cIdx}-${i}`"
-              :class="[
-                'rounded-lg px-3 py-2 text-sm',
-                msg.role === 'user'
-                  ? 'ml-8 bg-amber-100 text-stone-900'
-                  : 'mr-8 bg-stone-100 text-stone-800'
-              ]"
-            >
-              <p class="text-xs text-stone-500">{{ formatDate(msg.created_at) }} · {{ msg.role }}</p>
-              <p class="mt-1 whitespace-pre-wrap">{{ msg.content }}</p>
-            </div>
+      <section v-if="conversation && conversation.messages.length > 0" class="mt-8">
+        <h2 class="mb-4 text-lg font-semibold text-stone-800">Conversation (from this quote)</h2>
+        <div class="space-y-3 rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
+          <div
+            v-for="(msg, i) in conversation.messages"
+            :key="i"
+            :class="[
+              'rounded-lg px-3 py-2 text-sm',
+              msg.role === 'user'
+                ? 'ml-8 bg-amber-100 text-stone-900'
+                : 'mr-8 bg-stone-100 text-stone-800'
+            ]"
+          >
+            <p class="text-xs text-stone-500">{{ formatDate(msg.created_at) }} · {{ msg.role }}</p>
+            <p class="mt-1 whitespace-pre-wrap">{{ msg.content }}</p>
           </div>
-        </section>
-      </template>
+        </div>
+      </section>
     </template>
     <div v-else-if="loading" class="text-center text-stone-500">Loading…</div>
   </div>
