@@ -43,5 +43,7 @@ export const quoteSubmissions = sqliteTable('quote_submissions', {
   seriesSlug: text('series_slug'),
   chatSessionId: text('chat_session_id'),
   source: text('source', { enum: ['form', 'chat'] }),
+  visualizerImage: text('visualizer_image'),
+  visualizerConfig: text('visualizer_config'),
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
 })

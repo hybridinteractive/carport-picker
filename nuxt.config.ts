@@ -48,7 +48,11 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    googleAiApiKey: process.env.GOOGLE_AI_API_KEY || process.env.NANO_BANANA_API_KEY,
     openaiApiKey: process.env.NUXT_OPENAI_API_KEY,
+    public: {
+      calendlyUrl: process.env.NUXT_CALENDLY_URL || process.env.CALENDLY_URL || '',
+    },
     resendApiKey: process.env.RESEND_API_KEY,
     resendFromEmail: process.env.RESEND_FROM_EMAIL,
     resendRecipientEmail: process.env.RESEND_RECIPIENT_EMAIL,

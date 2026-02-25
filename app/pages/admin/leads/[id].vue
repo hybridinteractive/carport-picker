@@ -15,6 +15,8 @@ interface Lead {
   series_slug: string | null
   chat_session_id: string | null
   source: string | null
+  visualizer_image: string | null
+  visualizer_config: string | null
   created_at: string
 }
 
@@ -40,6 +42,9 @@ const id = computed(() => {
   return Array.isArray(p) ? p[0] : p
 })
 
+const config = useRuntimeConfig()
+const calendlyUrl = computed(() => (config.public?.calendlyUrl as string)?.trim() || '')
+
 const productSummary = computed(() => {
   const l = lead.value
   if (!l) return ''
@@ -49,6 +54,29 @@ const productSummary = computed(() => {
   else if (l.product_slug) parts.push(l.product_slug.replace(/-/g, ' '))
   return parts.length ? parts.join(' · ') : ''
 })
+
+const visualizerConfigParsed = computed(() => {
+  const raw = lead.value?.visualizer_config
+  if (!raw || typeof raw !== 'string') return {}
+  try {
+    return JSON.parse(raw) as Record<string, string | null>
+  } catch {
+    return {}
+  }
+})
+
+function formatConfigKey(key: string) {
+  const labels: Record<string, string> = {
+    carportName: 'Carport',
+    style: 'House style',
+    placement: 'Placement',
+    metalColor: 'Frame color',
+    roofPanelType: 'Roof panel type',
+    aluminumPanelColor: 'Aluminum panel color',
+    polycarbonatePanelType: 'Polycarbonate panel',
+  }
+  return labels[key] ?? key
+}
 
 async function loadLead() {
   const t = getStoredToken()
@@ -117,6 +145,9 @@ function formatDate(d: string) {
         >
           Interested in: {{ productSummary }}
         </p>
+        <div v-if="calendlyUrl" class="mt-4">
+          <a :href="calendlyUrl" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg bg-stone-800 px-3 py-2 text-sm font-medium text-white hover:bg-stone-700">Schedule call</a>
+        </div>
         <dl class="mt-4 grid gap-2 text-sm sm:grid-cols-2">
           <div v-if="lead.email">
             <dt class="text-stone-500">Email</dt>
@@ -150,6 +181,26 @@ function formatDate(d: string) {
         <div v-if="lead.message" class="mt-4 border-t border-stone-100 pt-4">
           <dt class="text-stone-500">Message</dt>
           <p class="mt-1 whitespace-pre-wrap text-stone-700">{{ lead.message }}</p>
+        </div>
+        <div v-if="lead.visualizer_config" class="mt-4 border-t border-stone-100 pt-4">
+          <dt class="text-stone-500">Carport Builder options</dt>
+          <dl class="mt-1 grid gap-1 text-sm sm:grid-cols-2">
+            <template v-for="(val, key) in visualizerConfigParsed" :key="key">
+              <template v-if="val != null && val !== ''">
+                <dt class="text-stone-500">{{ formatConfigKey(key) }}</dt>
+                <dd class="text-stone-800">{{ val }}</dd>
+              </template>
+            </template>
+          </dl>
+        </div>
+        <div v-if="lead.visualizer_image" class="mt-4 border-t border-stone-100 pt-4">
+          <dt class="text-stone-500">Carport Builder visual</dt>
+          <p class="mt-1 text-sm text-stone-600">What they generated in the visualizer:</p>
+          <img
+            :src="lead.visualizer_image"
+            alt="Lead visual"
+            class="mt-2 max-w-full max-h-80 rounded-lg border border-stone-200 object-contain bg-stone-50"
+          />
         </div>
       </div>
 

@@ -13,6 +13,7 @@ const links = [
       { label: 'Entry Doors', to: '/products/entry-doors' },
     ],
   },
+  { label: 'Carport Builder', to: '/visualize' },
   { label: 'Chat', to: '/chat' },
   { label: 'Get a Quote', to: '/quote' },
 ]

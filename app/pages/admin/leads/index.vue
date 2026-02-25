@@ -124,7 +124,10 @@ function groupLink(group: LeadGroup) {
   <div class="mx-auto max-w-4xl px-4 py-8">
     <div class="flex items-center justify-between">
       <h1 class="text-2xl font-bold text-stone-900">Leads</h1>
-      <NuxtLink to="/admin" class="text-sm text-stone-600 hover:text-stone-900">Back</NuxtLink>
+      <div class="flex items-center gap-4">
+        <NuxtLink to="/admin/chat-sessions" class="text-sm text-stone-600 hover:text-stone-900">Chats without quote</NuxtLink>
+        <NuxtLink to="/admin" class="text-sm text-stone-600 hover:text-stone-900">Back</NuxtLink>
+      </div>
     </div>
     <p v-if="error" class="mt-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{{ error }}</p>
     <div v-else-if="loading" class="mt-8 text-center text-stone-500">Loading…</div>

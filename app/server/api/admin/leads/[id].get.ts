@@ -33,6 +33,8 @@ export default defineEventHandler(async (event) => {
     series_slug: r.seriesSlug,
     chat_session_id: r.chatSessionId,
     source: r.source,
+    visualizer_image: r.visualizerImage ?? null,
+    visualizer_config: r.visualizerConfig ?? null,
     created_at: r.createdAt,
   }
 })

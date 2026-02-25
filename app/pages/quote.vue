@@ -23,6 +23,9 @@ const productInterestFromQuery = computed(() => {
   return typeof pi === 'string' ? pi : ''
 })
 
+const config = useRuntimeConfig()
+const calendlyUrl = computed(() => (config.public?.calendlyUrl as string)?.trim() || '')
+
 const form = ref({
   name: '',
   email: '',
@@ -30,6 +33,11 @@ const form = ref({
   product_interest: '',
   message: '',
 })
+
+const VISUALIZER_IMAGE_KEY = 'carport-picker-visualizer-image'
+const VISUALIZER_CONFIG_KEY = 'carport-picker-visualizer-config'
+const visualizerImage = ref<string | null>(null)
+const visualizerConfig = ref<Record<string, unknown> | null>(null)
 
 const productOptions = [
   { value: '', label: 'Select…' },
@@ -46,6 +54,28 @@ onMounted(() => {
   }
   if (productSlugFromQuery.value && !form.value.product_interest) {
     form.value.product_interest = productSlugFromQuery.value
+  }
+  const from = route.query.from
+  if (from === 'visualizer') {
+    form.value.message = form.value.message?.trim() ? form.value.message : 'I used the Carport Builder.'
+  }
+  if (typeof sessionStorage !== 'undefined') {
+    try {
+      const stored = sessionStorage.getItem(VISUALIZER_IMAGE_KEY)
+      if (stored && stored.startsWith('data:image/')) {
+        visualizerImage.value = stored
+      }
+      const configStr = sessionStorage.getItem(VISUALIZER_CONFIG_KEY)
+      if (configStr) {
+        try {
+          visualizerConfig.value = JSON.parse(configStr) as Record<string, unknown>
+        } catch {
+          // ignore
+        }
+      }
+    } catch {
+      // ignore
+    }
   }
 })
 
@@ -70,9 +100,19 @@ async function onSubmit() {
         series_slug: seriesSlugFromQuery.value || undefined,
         session_id: sessionIdFromQuery.value || undefined,
         source: sessionIdFromQuery.value ? 'chat' : 'form',
+        rendered_image: visualizerImage.value || undefined,
+        visualizer_config: visualizerConfig.value || undefined,
       },
     })
     submitted.value = true
+    if (typeof sessionStorage !== 'undefined') {
+      try {
+        sessionStorage.removeItem(VISUALIZER_IMAGE_KEY)
+        sessionStorage.removeItem(VISUALIZER_CONFIG_KEY)
+      } catch {
+        // ignore
+      }
+    }
   } catch (e: unknown) {
     const err = e as { data?: { statusMessage?: string }; message?: string }
     error.value = err?.data?.statusMessage ?? err?.message ?? 'Something went wrong'
@@ -90,6 +130,10 @@ async function onSubmit() {
     <div v-if="submitted" class="mt-10 rounded-xl border border-amber-200 bg-amber-50 p-6 text-amber-900">
       <p class="font-medium">Thank you!</p>
       <p class="mt-2 text-sm">Your quote request has been submitted. We’ll be in touch shortly.</p>
+      <p v-if="calendlyUrl" class="mt-4 text-sm">
+        Want to schedule a call?
+        <a :href="calendlyUrl" target="_blank" rel="noopener noreferrer" class="font-medium underline hover:no-underline">Schedule a call</a>
+      </p>
     </div>
 
     <form v-else class="mt-10 space-y-4" @submit.prevent="onSubmit">
@@ -135,6 +179,14 @@ async function onSubmit() {
             {{ opt.label }}
           </option>
         </select>
+      </div>
+      <div v-if="visualizerImage" class="rounded-lg border border-amber-200 bg-amber-50 p-3">
+        <p class="text-sm font-medium text-amber-900">Your Carport Builder visual will be included with this quote.</p>
+        <img
+          :src="visualizerImage"
+          alt="Your visual"
+          class="mt-2 max-h-32 w-auto rounded-lg border border-stone-200 object-contain"
+        />
       </div>
       <div>
         <label for="message" class="block text-sm font-medium text-stone-700">Message</label>

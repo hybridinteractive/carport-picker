@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "imports": {
-    "#internal/nuxt/paths": "/Users/mark/Sites/Apps/carport-picker/node_modules/@nuxt/nitro-server/dist/runtime/utils/paths.mjs"
+    "#internal/nuxt/paths": "./node_modules/@nuxt/nitro-server/dist/runtime/utils/paths.mjs"
   },
   "scripts": {
     "build": "nuxt build",
@@ -19,6 +19,7 @@
     "db:fix-quote-columns": "node scripts/apply-quote-sales-migration.mjs"
   },
   "dependencies": {
+    "@google/genai": "^1.42.0",
     "@libsql/client": "^0.14.0",
     "@sentry/nuxt": "^10",
     "drizzle-orm": "^0.38.0",
@@ -29,14 +30,14 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "wrangler": "^4",
-    "@vitejs/plugin-basic-ssl": "^1.1.0",
     "@tailwindcss/vite": "^4.0.0",
+    "@vitejs/plugin-basic-ssl": "^1.1.0",
     "dotenv": "^16.6.1",
     "drizzle-kit": "^0.30.0",
     "nuxt": "^3.14.0",
     "tailwindcss": "^4.0.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "wrangler": "^4"
   },
   "packageManager": "pnpm@10.15.1",
   "pnpm": {

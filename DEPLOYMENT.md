@@ -18,6 +18,7 @@ Copy `.env.example` to `.env` and set:
 | `TURSO_DATABASE_URL` | Yes (for chat/quote DB) | Turso libSQL URL, e.g. `libsql://carport-picker-chatbot-hybridinteractive.aws-us-west-2.turso.io` |
 | `TURSO_AUTH_TOKEN` | Yes (for Turso) | Turso auth token |
 | `NUXT_OPENAI_API_KEY` | Yes (for chat) | OpenAI API key |
+| `GOOGLE_AI_API_KEY` | Optional (for Carport Builder) | Google AI API key for visualizer image generation (Gemini). Alternative: `NANO_BANANA_API_KEY`. |
 | `RESEND_API_KEY` | Yes (for quote email) | Resend API key |
 | `RESEND_FROM_EMAIL` | Recommended | Sender address (defaults to Resend onboarding) |
 | `RESEND_RECIPIENT_EMAIL` | Recommended | Where to receive quote requests |
@@ -25,6 +26,7 @@ Copy `.env.example` to `.env` and set:
 | `NUXT_COOKIE_SECRET` | Yes (for chat email verification) | Long random string; signs the verified-email cookie. Set as **Encrypted** in the dashboard. |
 | `NUXT_ADMIN_SECRET` | Optional | Password for the sales admin dashboard at `/admin`. If unset, admin API returns 503. |
 | `QUOTE_WEBHOOK_URL` | Optional | URL to POST new quote payloads (for CRM/Zapier/Make). |
+| `NUXT_CALENDLY_URL` or `CALENDLY_URL` | Optional | Calendly booking URL; shows "Schedule a call" on quote success and admin lead view. |
 | `SENTRY_DSN` | Optional | Sentry DSN for error reporting |
 
 ### Cloudflare Pages (dashboard)
@@ -84,3 +86,12 @@ Alternatively, connect the repo in Cloudflare Pages and set the same env vars un
 - **Root directory:** (leave empty)
 
 Run migrations separately (e.g. in CI or manually) after deploy.
+
+## Follow-up email (second email)
+
+The app sends one confirmation email when a quote is submitted. To send a **second follow-up email** (e.g. 24–48 hours later: “Still have questions? Chat or reply.”) without adding cron or a queue in the app:
+
+1. Set **`QUOTE_WEBHOOK_URL`** to a Zapier/Make/n8n webhook that receives the quote payload.
+2. In Zapier/Make: when the webhook fires, add a **Delay** step (e.g. 24 hours), then send an email (Resend, Gmail, or your provider) using the contact info from the payload.
+
+No code changes are required in the app. The webhook payload includes `name`, `email`, `phone`, `message`, and other quote fields so you can personalize the follow-up.

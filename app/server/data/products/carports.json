@@ -48,6 +48,33 @@
     "Japanese fabrication quality"
   ],
   "attribution": "Product info from KunkelWorks (kunkelworks.com). For detailed specs and pricing: info@kunkelworks.com.",
+  "customizationOptions": {
+    "frameColors": [
+      { "id": "slc", "name": "Sun Silver (SLC)" },
+      { "id": "uc", "name": "Urban Gray (UC)" },
+      { "id": "bd", "name": "Dark Bronze (BD)" },
+      { "id": "kc", "name": "Black (KC)" },
+      { "id": "wh", "name": "White (WH)" },
+      { "id": "br", "name": "Bronze (BR)" },
+      { "id": "bnc", "name": "Earth Brown (BNC)" }
+    ],
+    "roofPanelTypes": [
+      { "id": "aluminum", "name": "Aluminum" },
+      { "id": "polycarbonate", "name": "Polycarbonate (Lexan)" }
+    ],
+    "aluminumPanelColors": [
+      { "id": "urban_gray", "name": "Urban Gray Aluminum" },
+      { "id": "deep_brown", "name": "Deep Brown Aluminum" }
+    ],
+    "polycarbonatePanelTypes": [
+      { "id": "brown", "name": "Brown Panel" },
+      { "id": "blue", "name": "Blue Panel" },
+      { "id": "frosted", "name": "Frosted Panel" },
+      { "id": "ao_heat_cut", "name": "AO Heat-cut" },
+      { "id": "frosted_heat_cut", "name": "Frosted Heat-cut" },
+      { "id": "infrared_hc_frosted", "name": "Infra-red HC Frosted" }
+    ]
+  },
   "seriesDetails": {
     "pjr": {
       "name": "PJR Series",
