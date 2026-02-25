@@ -4,27 +4,189 @@
   "galleryUrl": "https://www.kunkelworks.com/gates/",
   "description": "Japanese aluminum entry gates, driveway gates, and pool gates. Custom fit, outward opening, spacers/stationary options; custom fabrication and lock options. Corrosion resistant and maintenance-free.",
   "descriptionLong": "Sankyo-Tateyama aluminum gate systems distributed by KunkelWorks. Entry gate styles, driveway gates, and pool gates; custom fit and outward opening. Spacers and stationary panels available. Custom fabrication and lock options. Same meticulous Japanese fabrication as carports and patio covers—resilient to humidity, salt, and sun. Full gate series: kunkelworks.com/gate-series.",
-  "series": ["MCE Gates", "MCE-H Gates", "VOMC", "VPMC", "WM", "Cast Aluminum", "PVC Bamboo", "Sliding", "Other Gates", "MEX", "MF", "MLW", "MV"],
-  "styles": ["Entry gate styles", "Driveway gates", "Pool gates", "Outward opening", "Spacers/stationary", "Custom fabrication", "Lock options"],
-  "options": ["Custom fit", "Outward opening", "Spacers and stationary panels", "Custom fabrication", "Lock options"],
-  "sizes": ["Custom sizes to fit opening; specify dimensions for quote"],
-  "finishes": ["Anodized and coated aluminum; color options available"],
+  "series": [
+    "MCE Gates",
+    "MCE-H Gates",
+    "VOMC",
+    "VPMC",
+    "WM",
+    "Cast Aluminum",
+    "PVC Bamboo",
+    "Sliding",
+    "Other Gates",
+    "MEX",
+    "MF",
+    "MLW",
+    "MV"
+  ],
+  "styles": [
+    "Entry gate styles",
+    "Driveway gates",
+    "Pool gates",
+    "Outward opening",
+    "Spacers/stationary",
+    "Custom fabrication",
+    "Lock options"
+  ],
+  "options": [
+    "Custom fit",
+    "Outward opening",
+    "Spacers and stationary panels",
+    "Custom fabrication",
+    "Lock options"
+  ],
+  "sizes": [
+    "Custom sizes to fit opening; specify dimensions for quote"
+  ],
+  "finishes": [
+    "Anodized and coated aluminum; color options available"
+  ],
   "priceNote": "Pricing by size and options; email requirements for quote.",
-  "benefits": ["Corrosion resistant", "Maintenance-free", "Secure", "Custom fit", "Japanese quality"],
+  "benefits": [
+    "Corrosion resistant",
+    "Maintenance-free",
+    "Secure",
+    "Custom fit",
+    "Japanese quality"
+  ],
   "attribution": "Product info from KunkelWorks (kunkelworks.com). For details and pricing: info@kunkelworks.com. Gate series: kunkelworks.com/gate-series.",
   "seriesDetails": {
-    "mce-gates": { "name": "MCE Gates (NEW)", "detailUrl": "https://www.kunkelworks.com/mce-gates/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
-    "mceh-gates": { "name": "MCE-H Gates (NEW)", "detailUrl": "https://www.kunkelworks.com/mceh-gates-new/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
-    "vomc": { "name": "VOMC (6 styles)", "detailUrl": "https://www.kunkelworks.com/vomc-series/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
-    "vpmc": { "name": "VPMC (2 styles)", "detailUrl": "https://www.kunkelworks.com/vpmc-series/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
-    "wm": { "name": "WM (10 styles)", "detailUrl": "https://www.kunkelworks.com/wm-series/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
-    "cast-aluminum-gates": { "name": "Cast Aluminum", "detailUrl": "https://www.kunkelworks.com/cast-aluminum-gates/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
-    "bamboo-gates": { "name": "PVC Bamboo (2)", "detailUrl": "https://www.kunkelworks.com/bamboo-gates/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
-    "sliding-gates": { "name": "Sliding (8 styles)", "detailUrl": "https://www.kunkelworks.com/sliding-gates/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
-    "other-gates": { "name": "Other Gates", "detailUrl": "https://www.kunkelworks.com/other-gates/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
-    "mex": { "name": "MEX (8 styles)", "detailUrl": "https://www.kunkelworks.com/mex-series/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
-    "mf": { "name": "MF (8 styles)", "detailUrl": "https://www.kunkelworks.com/mf-series/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
-    "mlw": { "name": "MLW (3 styles)", "detailUrl": "https://www.kunkelworks.com/mlw-series/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
-    "mv": { "name": "MV (8 styles)", "detailUrl": "https://www.kunkelworks.com/mv-series/", "galleryUrl": "https://www.kunkelworks.com/gates/" }
+    "mce-gates": {
+      "name": "MCE Gates (NEW)",
+      "detailUrl": "https://www.kunkelworks.com/mce-gates/",
+      "galleryUrl": "https://www.kunkelworks.com/gates/",
+      "description": "MCE and the taller MCE-H are the newest gate series; they replace MEX, MLW and MF. Panels re-designed with metal profile covering the whole panel top (no plastic top-caps). New vertical picket styles. See MCE Detail PDF.",
+      "pdfUrl": "https://www.kunkelworks.com/s/MCE-Gates-2021.pdf"
+    },
+    "mceh-gates": {
+      "name": "MCE-H Gates (NEW)",
+      "detailUrl": "https://www.kunkelworks.com/mceh-gates-new/",
+      "galleryUrl": "https://www.kunkelworks.com/gates/",
+      "description": "Taller MCE-H gate series. New heights: H1700 (5.84') and H1900 (6.5'). Same metal panel top and new vertical picket styles as MCE. See MCE-H Detail PDF.",
+      "sizes": [
+        "New heights: H1700 (5.84'), H1900 (6.5')"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/MCE-H-Gates-2021.pdf"
+    },
+    "vomc": {
+      "name": "VOMC (6 styles)",
+      "detailUrl": "https://www.kunkelworks.com/vomc-series/",
+      "galleryUrl": "https://www.kunkelworks.com/gates/",
+      "description": "Commercial grade gate series with open pickets. 6 picket styles and 3 colors. Style #5 beefy picket, #3 tight spacing, #1 can go to almost 10' with bent pickets up to 8.2'. Gates can be fitted on site. Matching Fence: VOF and REOF.",
+      "sizes": [
+        "Finished Heights: 3.28'/3.93'/4.92'/5.9'/6.56'/8.2'/9.84'",
+        "Max. Width Single: 4.39' or less",
+        "Max. Width Double: 8' or less",
+        "Max. Width DWG Single: 7.46' or less",
+        "Max. Width DWG Double: 14' or less"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/VOMC-Open-2019.pdf"
+    },
+    "vpmc": {
+      "name": "VPMC (2 styles)",
+      "detailUrl": "https://www.kunkelworks.com/vpmc-series/",
+      "galleryUrl": "https://www.kunkelworks.com/gates/",
+      "description": "Super popular in the US; good match for any 4\" picket fence. Heights from 3.3' to 6'. Standard panel width 43\"; easily fitted to any opening. Matching Fence: REPF and VPF.",
+      "sizes": [
+        "Finished Heights: 3.28'/3.9'/4.9'/5.9'",
+        "Max. Width Single: 4.3' or less",
+        "Max. Width Double: 8' or less"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/VPMC-Closed-2019.pdf"
+    },
+    "wm": {
+      "name": "WM (10 styles)",
+      "detailUrl": "https://www.kunkelworks.com/wm-series/",
+      "galleryUrl": "https://www.kunkelworks.com/gates/",
+      "description": "WM is the choice for Wood-Look gates. 5 wood-look combinations and 8 panel styles. Since 2018, style Y1 and SD available in all metal finish (Peter or Deep Brown). Taller: WM-T Series. Matching Fence: WF Series.",
+      "sizes": [
+        "Finished Heights: 4.19'/4.85'/5.51'",
+        "Max. Width Single: 3.54' or less",
+        "Max. Width Double: 6.57' or less"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/WM-Gates-2019.pdf"
+    },
+    "cast-aluminum-gates": {
+      "name": "Cast Aluminum",
+      "detailUrl": "https://www.kunkelworks.com/cast-aluminum-gates/",
+      "galleryUrl": "https://www.kunkelworks.com/gates/",
+      "description": "Cast aluminum gates: solid aluminum (wrought-iron look without rust). Multiple styles; see Product Detail PDFs for ABS/ABB, ACS-1, AGB, AGC, AGK, AGY, APR, ALW, ART/AAM.",
+      "pdfUrl": "https://www.kunkelworks.com/s/CastAlu-Gate-ABS-ABB.pdf"
+    },
+    "bamboo-gates": {
+      "name": "PVC Bamboo (2)",
+      "detailUrl": "https://www.kunkelworks.com/bamboo-gates/",
+      "galleryUrl": "https://www.kunkelworks.com/gates/",
+      "description": "PVC Bamboo gates—look like real bamboo but stand up to weather. Traditional Japanese style; black ropes decorative. Light and dark color options. Same PDF as Bamboo fence.",
+      "pdfUrl": "https://www.kunkelworks.com/s/FTK-Bamboo.pdf"
+    },
+    "sliding-gates": {
+      "name": "Sliding (8 styles)",
+      "detailUrl": "https://www.kunkelworks.com/sliding-gates/",
+      "galleryUrl": "https://www.kunkelworks.com/gates/",
+      "description": "Sliding gate series; 8 styles. See Product Details PDF for specifications.",
+      "pdfUrl": "https://www.kunkelworks.com/s/SRN-Slide-2019.pdf"
+    },
+    "other-gates": {
+      "name": "Other Gates",
+      "detailUrl": "https://www.kunkelworks.com/other-gates/",
+      "galleryUrl": "https://www.kunkelworks.com/gates/",
+      "description": "Many more gate styles from Japan, including various luxury styles. See Product Details PDF for options.",
+      "pdfUrl": "https://www.kunkelworks.com/s/kunkelworks-pjr-port.pdf"
+    },
+    "mex": {
+      "name": "MEX (8 styles)",
+      "detailUrl": "https://www.kunkelworks.com/mex-series/",
+      "galleryUrl": "https://www.kunkelworks.com/gates/",
+      "description": "The MEX is the most popular gate series in Hawaii. 8 panel styles and 5 colors. Can reach height of 5'-6\" which looks great next to a 6' wall. For higher gates see MF Series. All gates can be fitted on site; multi-pane bi-fold available up to 4.85'.",
+      "sizes": [
+        "Finished Heights: 3.54'/4.19'/4.85'/5.51'",
+        "Max. Width Single: 3.96' or less",
+        "Max. Width Double: 7.34' or less",
+        "Max. Width Multiple Panel: 12.79' or less",
+        "Matching Fence: FEX Series"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/MEX-Gates-2019.pdf"
+    },
+    "mf": {
+      "name": "MF (8 styles)",
+      "detailUrl": "https://www.kunkelworks.com/mf-series/",
+      "galleryUrl": "https://www.kunkelworks.com/gates/",
+      "description": "The MF is the Tall Gate Series. Same profile styles as MEX but larger, taller panels and more substantial posts. 8 panel styles, 4 metal colors; wood-look panels with horizontal semi-private or fully private options.",
+      "sizes": [
+        "Finished Heights: 5.51'/6.16'/6.82'",
+        "Max. Width Single: 4.29' or less",
+        "Max. Width Double: 8' or less",
+        "Matching Fence: FEX Series - Stacked"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/MF-2019.pdf"
+    },
+    "mlw": {
+      "name": "MLW (3 styles)",
+      "detailUrl": "https://www.kunkelworks.com/mlw-series/",
+      "galleryUrl": "https://www.kunkelworks.com/gates/",
+      "description": "Alternative to MEX gates. 3 panel styles: strong vertical picket and two decorative designs. 3 colors: Black, Deep Brown and Bronze. Max height 4.85'. Multi-panel bi-fold up to 14.1' width. Matching Fence: FIN Series.",
+      "colors": "Black, Deep Brown and Bronze",
+      "sizes": [
+        "Finished Heights: 3.54'/4.19'/4.85'",
+        "Max. Width Single: 3.96' or less",
+        "Max. Width Double: 7.34' or less",
+        "Max. Width Multiple Panel: 14.1' or less"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/MLW-Gates-2019.pdf"
+    },
+    "mv": {
+      "name": "MV (8 styles)",
+      "detailUrl": "https://www.kunkelworks.com/mv-series/",
+      "galleryUrl": "https://www.kunkelworks.com/gates/",
+      "description": "One of the most popular gate series in Japan for lower height gates. 13 panel styles and 7 colors. Ideal for 4' tall gates. Fitted on site; multi-panel bi-fold up to 4.19'. Matching Fence: FVX Series.",
+      "sizes": [
+        "Finished Heights: 3.54'/4.19'",
+        "Max. Width Single: 3.54' or less",
+        "Max. Width Double: 6.49' or less",
+        "Max. Width Multiple Panel: 12.79' or less"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/MV-Gates-2019.pdf"
+    }
   }
 }

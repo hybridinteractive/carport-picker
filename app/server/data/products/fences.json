@@ -4,38 +4,237 @@
   "galleryUrl": "https://www.kunkelworks.com/fences/",
   "description": "Aluminum fences: styles, railings, privacy walls, stacking, and lifting fence. Custom fit. Japanese aluminum—corrosion resistant and maintenance-free.",
   "descriptionLong": "Sankyo-Tateyama aluminum fence systems from KunkelWorks. Multiple styles including railings, privacy walls, stacking, and lifting fence. Custom fit to your site. Same high-grade materials and quality control as carports and patio covers—resilient to humidity, rain, sea salt, and intense sunshine. Full fence styles: kunkelworks.com/fence-styles.",
-  "series": ["CEF Fence", "CEF-H Fence", "FIN", "FNG/FV", "FVE", "FVX", "REF", "SFC", "VOF", "VPF", "WF", "Cast Aluminum", "FL", "Bamboo", "Stacking", "Lifting Fence", "FEX"],
-  "styles": ["Fence styles", "Railings", "Privacy walls", "Stacking", "Lifting fence", "Custom fit"],
-  "options": ["Custom fit", "Privacy panels", "Railings", "Stacking and lifting options"],
-  "sizes": ["Custom lengths and heights; specify dimensions for quote"],
-  "finishes": ["Anodized and coated aluminum; color options available"],
+  "series": [
+    "CEF Fence",
+    "CEF-H Fence",
+    "FIN",
+    "FNG/FV",
+    "FVE",
+    "FVX",
+    "REF",
+    "SFC",
+    "VOF",
+    "VPF",
+    "WF",
+    "Cast Aluminum",
+    "FL",
+    "Bamboo",
+    "Stacking",
+    "Lifting Fence",
+    "FEX"
+  ],
+  "styles": [
+    "Fence styles",
+    "Railings",
+    "Privacy walls",
+    "Stacking",
+    "Lifting fence",
+    "Custom fit"
+  ],
+  "options": [
+    "Custom fit",
+    "Privacy panels",
+    "Railings",
+    "Stacking and lifting options"
+  ],
+  "sizes": [
+    "Custom lengths and heights; specify dimensions for quote"
+  ],
+  "finishes": [
+    "Anodized and coated aluminum; color options available"
+  ],
   "priceNote": "Pricing by length, height, and style; email requirements for quote.",
-  "benefits": ["Corrosion resistant", "Maintenance-free", "Privacy and security", "Custom fit", "Japanese quality"],
+  "benefits": [
+    "Corrosion resistant",
+    "Maintenance-free",
+    "Privacy and security",
+    "Custom fit",
+    "Japanese quality"
+  ],
   "attribution": "Product info from KunkelWorks (kunkelworks.com). For details and pricing: info@kunkelworks.com. Fence styles: kunkelworks.com/fence-styles.",
   "seriesDetails": {
-    "cef-fence": { "name": "CEF Fence (NEW)", "detailUrl": "https://www.kunkelworks.com/cef-fence/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
-    "cefh-fence": { "name": "CEF-H Fence (NEW)", "detailUrl": "https://www.kunkelworks.com/cefh-fence-new/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "cef-fence": {
+      "name": "CEF Fence (NEW)",
+      "detailUrl": "https://www.kunkelworks.com/cef-fence/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "CEF and the taller CEF-H fence series are the newest additions to the KunkelWorks product lines.",
+      "sizes": [
+        "Finished Height: 23.5\"/31.5\"/39\"/47\" (taller see CEF-H or Stacking)",
+        "Panel Width: 2000mm, 6.5'"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/CEF-Fence-600-1200.pdf"
+    },
+    "cefh-fence": {
+      "name": "CEF-H Fence (NEW)",
+      "detailUrl": "https://www.kunkelworks.com/cefh-fence-new/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "CEF and the taller CEF-H fence series are the newest additions to the KunkelWorks product lines.",
+      "pdfUrl": "https://www.kunkelworks.com/s/CEF-H-Fence-1400-1600.pdf"
+    },
     "fin": {
       "name": "FIN (3 Styles)",
       "description": "The FIN Fence System features decorative profiles on semi-private styles FIN-1 and FIN-2, and the solid style FIN-3, that can have a \"Japanese Style Topper.\"",
       "colors": "Black, Deep Brown, Bronze and Urban Gray",
-      "sizes": ["Fence Heights: 23.5\"/31.5\"/39.4\"", "Panel Width: 6.5'"],
+      "sizes": [
+        "Fence Heights: 23.5\"/31.5\"/39.4\"",
+        "Panel Width: 6.5'"
+      ],
       "detailUrl": "https://www.kunkelworks.com/fin/",
       "galleryUrl": "https://www.kunkelworks.com/fences/"
     },
-    "fngfv": { "name": "FNG/FV (3 styles)", "detailUrl": "https://www.kunkelworks.com/fngfv/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
-    "fve": { "name": "FVE (3 styles)", "detailUrl": "https://www.kunkelworks.com/fve/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
-    "fvx": { "name": "FVX (13 styles)", "detailUrl": "https://www.kunkelworks.com/fvx/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
-    "ref": { "name": "REF (2 styles)", "detailUrl": "https://www.kunkelworks.com/repfreof/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
-    "sfc": { "name": "SFC (13 styles)", "detailUrl": "https://www.kunkelworks.com/sfc/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
-    "vof": { "name": "VOF (7 styles)", "detailUrl": "https://www.kunkelworks.com/vof/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
-    "vpf": { "name": "VPF (2 styles)", "detailUrl": "https://www.kunkelworks.com/vpf/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
-    "wf": { "name": "WF (8 styles)", "detailUrl": "https://www.kunkelworks.com/pagewf/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
-    "cast-aluminum": { "name": "Cast Aluminum", "detailUrl": "https://www.kunkelworks.com/cast-aluminum/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
-    "fl": { "name": "FL (5 styles)", "detailUrl": "https://www.kunkelworks.com/fence-fl/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
-    "bamboo": { "name": "Bamboo (3)", "detailUrl": "https://www.kunkelworks.com/bamboo/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
-    "stacking": { "name": "Stacking", "detailUrl": "https://www.kunkelworks.com/stacking/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
-    "lifting-fence": { "name": "Lifting Fence", "detailUrl": "https://www.kunkelworks.com/lifting-fence/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
-    "fex": { "name": "FEX (8 Styles)", "detailUrl": "https://www.kunkelworks.com/fex/", "galleryUrl": "https://www.kunkelworks.com/fences/" }
+    "fngfv": {
+      "name": "FNG/FV (3 styles)",
+      "detailUrl": "https://www.kunkelworks.com/fngfv/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "The FV and FNG are the Tall & Private fences that can reach 6.5' without stacking. Both have 3 panel styles; all three totally private. FNG-3 and FV-9H have scalloped profiles and allow air flow.",
+      "colors": "Black, Deep Brown and Urban Gray",
+      "sizes": [
+        "Fence Heights: 55\", 63\", 71\", 78.7\"",
+        "Panel Width: 6.5'"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/FNG-Fence-18-20.pdf"
+    },
+    "fve": {
+      "name": "FVE (3 styles)",
+      "detailUrl": "https://www.kunkelworks.com/fve/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "The FVE Fence System has 3 panel styles: horizontal with small gaps, vertical with small gaps, and scalloped horizontal which lets air through. Wood laminate options available.",
+      "sizes": [
+        "Fence Heights: 23.5\"/31.5\"/39.4\"/47.2\"",
+        "Panel Width: 6.5'"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/FVE-Fence-Series.pdf"
+    },
+    "fvx": {
+      "name": "FVX (13 styles)",
+      "detailUrl": "https://www.kunkelworks.com/fvx/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "13 FVX panel styles and 6 colors; FVX-2 with vertical pickets is the most popular. Fixed panel for strength. 3 heights; can stack up to 9.6'.",
+      "colors": "6 colors available",
+      "sizes": [
+        "Fence Heights: 23.5\"/31.5\"/39.4\"/47.2\" (47.2\" only FVX-6)",
+        "Panel Width: 6.5'"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/FVX-Fence.pdf"
+    },
+    "ref": {
+      "name": "REF (2 styles)",
+      "detailUrl": "https://www.kunkelworks.com/repfreof/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "REPF and REOF: simple 4\" pickets, very good price point. REPF has closed top rail; REOF has open pickets top and bottom. Height up to 5'. For taller fence see VOF or VPF.",
+      "colors": "Silver, pewter and deep brown (almost black)",
+      "sizes": [
+        "Fence Heights: 39.4\"/47.2\"/59\"",
+        "Panel Width: 6.5'"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/REOF-REPF-Fence.pdf"
+    },
+    "sfc": {
+      "name": "SFC (13 styles)",
+      "detailUrl": "https://www.kunkelworks.com/sfc/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "Well priced, easy to install. 7 colors and 3 styles. Fixed panel; can stack up to 9.8'. Posts behind or between panels. No iron, no rust.",
+      "colors": "7 colors available",
+      "sizes": [
+        "Fence Heights: 23.6\"/31.5\"/39.4\"",
+        "Panel Width: 6.5'"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/SFC-Fence.pdf"
+    },
+    "vof": {
+      "name": "VOF (7 styles)",
+      "detailUrl": "https://www.kunkelworks.com/vof/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "Most versatile tall fence. 5 picket options; 4 square picket styles; VOF-4 rounded, VOF-6 metal point tips, VOF-7 bent for security. Matching gates: VOMC, VPMC.",
+      "sizes": [
+        "Tallest panel (no stack): 2m/6.56' all styles; VOF-1 up to 3m/9.8'"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/VOF-Fence-1-7.pdf"
+    },
+    "vpf": {
+      "name": "VPF (2 styles)",
+      "detailUrl": "https://www.kunkelworks.com/vpf/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "Tall fence solution. 2 picket spacing options, 3 colors. Commercial grade; individual picket caps and panel connectors; pickets riveted so water wicks off. Fixed and sloping panel styles. Posts behind or between. Matching gates: VPMC.",
+      "colors": "3 colors available",
+      "sizes": [
+        "Fence Heights: 39.4\"/47.2\"/59\"/70.9\"/78.7\""
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/VPF-Fence.pdf"
+    },
+    "wf": {
+      "name": "WF (8 styles)",
+      "detailUrl": "https://www.kunkelworks.com/pagewf/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "Wood-look panels. 8 panel styles with wood-look options. Styles Y1, YP also available in all metal Pewter or Deep Brown. Frosted privacy inserts available. Can stack to 9.8'. Matching gates: WM (Lower & Tall).",
+      "sizes": [
+        "Fence Heights: 23.5\"/31.5\"/39.4\"/47.2\"",
+        "Stack to 9.8'"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/WF-Fence.pdf"
+    },
+    "cast-aluminum": {
+      "name": "Cast Aluminum",
+      "detailUrl": "https://www.kunkelworks.com/cast-aluminum/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "Cast aluminum fences and gates: solid aluminum pickets (not hollow extruded). Wrought-iron look without rust. Various heights depending on style. Matching: Cast Aluminum Gates.",
+      "sizes": [
+        "Fence heights: various, depending on style"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/Cast-Aluminum-Fence-KW.pdf"
+    },
+    "fl": {
+      "name": "FL (5 styles)",
+      "detailUrl": "https://www.kunkelworks.com/fence-fl/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "Beefy FL profiles; favorite for privacy walls. Metal and wood laminate options; different picket sizes and shapes. Standard 2m (6.5') wide; 5'+ heights can order 1m panels.",
+      "sizes": [
+        "Fence Heights: 23.5\"/31.5\"/39.4\"/47.2\"/55.2\"/63\"/70.8\"/78.7\"/98.4\"/118\"",
+        "Panel Width: 1000mm or 2000mm"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/FL-Profile-LO.pdf"
+    },
+    "bamboo": {
+      "name": "Bamboo (3)",
+      "detailUrl": "https://www.kunkelworks.com/bamboo/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "Artificial PVC bamboo; lasts much longer than natural. Traditional look with stainless steel wire under decorative black bindings. Horizontal panels 3-dimensional; vertical often facades.",
+      "sizes": [
+        "Low Heights: 23.5\"/31.5\"/39.4\"",
+        "Tall Heights: 35.4\"/47.2\"/59\"/70.8\"",
+        "Panel Width: 1800mm"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/FTK-Bamboo.pdf"
+    },
+    "stacking": {
+      "name": "Stacking",
+      "detailUrl": "https://www.kunkelworks.com/stacking/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "Japanese fence panels can be stacked to almost 10' (3 panels). Posts generally behind to show panels. Panel styles can be combined; lower panels often more see-through, upper solid for privacy.",
+      "sizes": [
+        "Stack up to almost 10' (3 panels)"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/Stacking-Fence-2019.pdf"
+    },
+    "lifting-fence": {
+      "name": "Lifting Fence",
+      "detailUrl": "https://www.kunkelworks.com/lifting-fence/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "Stacking posts can lift fence panels high (e.g. to use neighbor's wall). All residential fence panels can be \"lifted\" on stacking posts.",
+      "sizes": [
+        "Lift panels on stacking posts; stack to almost 10'"
+      ]
+    },
+    "fex": {
+      "name": "FEX (8 Styles)",
+      "detailUrl": "https://www.kunkelworks.com/fex/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "description": "Companion line for MEX Gates. 8 panel styles: 5 semi-private, 3 fully private. Can stack for higher height. Matching gate: MEX.",
+      "sizes": [
+        "Fence Heights: 23.5\"/31.5\"/39.4\"/47.2\"",
+        "Stacked: up to 9.8'"
+      ],
+      "pdfUrl": "https://www.kunkelworks.com/s/FEX-Fence.pdf"
+    }
   }
 }

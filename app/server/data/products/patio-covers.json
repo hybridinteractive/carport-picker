@@ -40,7 +40,14 @@
       "detailUrl": "https://www.kunkelworks.com/tfma/",
       "pdfUrl": "https://www.kunkelworks.com/s/REVOLU-2021.pdf"
     },
-    "tr1ma": { "name": "REVOLU TR1MA", "description": "REVOLU patio cover series.", "galleryUrl": "https://www.kunkelworks.com/patio-gallery", "detailUrl": "https://www.kunkelworks.com/trma/" },
+    "tr1ma": {
+      "name": "REVOLU TR1MA",
+      "description": "The REVOLU TRMA features rafters curved on the outside edge and a Bearing Beam. The bearing beam allows flexible post placement: posts can move left or right, and the bearing beam can move forward or back. This enables a cantilever roof edge that can protect a banister or deck from the elements and helps with post setback issues. Maximum projection is 15'. Projections 3' to 8' have a panel width of 36\"; projections 9' to 15' have a panel width of 18\". Ordinarily attached to a house wall; can be roof-mounted with special ledgers and brackets.",
+      "sizes": ["Projections: 3' to 15'", "Panel width: 36\" for 3'–8', 18\" for 9'–15'", "Regular width 12'; 18' units available", "Width extendable without limit"],
+      "galleryUrl": "https://www.kunkelworks.com/patio-gallery",
+      "detailUrl": "https://www.kunkelworks.com/trma/",
+      "pdfUrl": "https://www.kunkelworks.com/s/REVOLU-2021.pdf"
+    },
     "woodlook": {
       "name": "Wood-Look",
       "description": "The Wood-Look cover is made from the same aluminum profiles as the REVOLU Patio Covers. It has all the advantages of a canopy that will never rust and is protected from corrosion. The aluminum profiles are wrapped with a laminate changing the modern metallic appearance to a more traditional wooden look.",

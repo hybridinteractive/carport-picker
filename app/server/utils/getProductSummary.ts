@@ -45,6 +45,7 @@ function formatSeriesDetail(_key: string, s: SeriesDetail): string {
   if (s.sizes?.length) parts.push(`Sizes: ${s.sizes.join('; ')}`)
   if (s.priceRange) parts.push(`Price range: ${s.priceRange}`)
   if (s.detailUrl) parts.push(`Details: ${s.detailUrl}`)
+  if (s.pdfUrl) parts.push(`PDF: ${s.pdfUrl}`)
   return parts.join('\n')
 }
 
