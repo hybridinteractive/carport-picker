@@ -1,6 +1,6 @@
 {
   "name": "Fences",
-  "image": "https://placehold.co/800x500/78716c/f5f5f4?text=Fences",
+  "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1612867080427-YJAFXCOX2I7YG5JGK75F/CEF-600-WebPic.jpg",
   "galleryUrl": "https://www.kunkelworks.com/fences/",
   "description": "Aluminum fences: styles, railings, privacy walls, stacking, and lifting fence. Custom fit. Japanese aluminum—corrosion resistant and maintenance-free.",
   "descriptionLong": "Sankyo-Tateyama aluminum fence systems from KunkelWorks. Multiple styles including railings, privacy walls, stacking, and lifting fence. Custom fit to your site. Same high-grade materials and quality control as carports and patio covers—resilient to humidity, rain, sea salt, and intense sunshine. Full fence styles: kunkelworks.com/fence-styles.",
@@ -62,14 +62,16 @@
         "Finished Height: 23.5\"/31.5\"/39\"/47\" (taller see CEF-H or Stacking)",
         "Panel Width: 2000mm, 6.5'"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/CEF-Fence-600-1200.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/CEF-Fence-600-1200.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1612867080427-YJAFXCOX2I7YG5JGK75F/CEF-600-WebPic.jpg"
     },
     "cefh-fence": {
       "name": "CEF-H Fence (NEW)",
       "detailUrl": "https://www.kunkelworks.com/cefh-fence-new/",
       "galleryUrl": "https://www.kunkelworks.com/fences/",
       "description": "CEF and the taller CEF-H fence series are the newest additions to the KunkelWorks product lines.",
-      "pdfUrl": "https://www.kunkelworks.com/s/CEF-H-Fence-1400-1600.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/CEF-H-Fence-1400-1600.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1612867342321-58VK9O3N570VKHU0JOIN/CEF-H-1400-WebPic.jpg"
     },
     "fin": {
       "name": "FIN (3 Styles)",
@@ -80,7 +82,8 @@
         "Panel Width: 6.5'"
       ],
       "detailUrl": "https://www.kunkelworks.com/fin/",
-      "galleryUrl": "https://www.kunkelworks.com/fences/"
+      "galleryUrl": "https://www.kunkelworks.com/fences/",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1569881568345-PCPC0Q6L6TY8GM58TEFO/01_4224.jpg"
     },
     "fngfv": {
       "name": "FNG/FV (3 styles)",
@@ -92,7 +95,8 @@
         "Fence Heights: 55\", 63\", 71\", 78.7\"",
         "Panel Width: 6.5'"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/FNG-Fence-18-20.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/FNG-Fence-18-20.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1569881647301-LJRZLZFJG883G9RR38A2/01_1890.jpg"
     },
     "fve": {
       "name": "FVE (3 styles)",
@@ -103,7 +107,8 @@
         "Fence Heights: 23.5\"/31.5\"/39.4\"/47.2\"",
         "Panel Width: 6.5'"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/FVE-Fence-Series.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/FVE-Fence-Series.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1569881803642-0GGUUCLALGVT4SDNH5L3/01+FVE-1+UC.jpg"
     },
     "fvx": {
       "name": "FVX (13 styles)",
@@ -115,7 +120,8 @@
         "Fence Heights: 23.5\"/31.5\"/39.4\"/47.2\" (47.2\" only FVX-6)",
         "Panel Width: 6.5'"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/FVX-Fence.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/FVX-Fence.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1569881909627-BV1JFBRM4D02JZKFDMOE/01_0431.jpg"
     },
     "ref": {
       "name": "REF (2 styles)",
@@ -127,7 +133,8 @@
         "Fence Heights: 39.4\"/47.2\"/59\"",
         "Panel Width: 6.5'"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/REOF-REPF-Fence.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/REOF-REPF-Fence.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1569881999405-KM8N9EWNAJ4F2E2I0FP7/01_IMG_1984.jpg"
     },
     "sfc": {
       "name": "SFC (13 styles)",
@@ -139,7 +146,8 @@
         "Fence Heights: 23.6\"/31.5\"/39.4\"",
         "Panel Width: 6.5'"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/SFC-Fence.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/SFC-Fence.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1569882065993-YQRFFUTYAFV5D34GR82O/01_2646.jpg"
     },
     "vof": {
       "name": "VOF (7 styles)",
@@ -149,7 +157,8 @@
       "sizes": [
         "Tallest panel (no stack): 2m/6.56' all styles; VOF-1 up to 3m/9.8'"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/VOF-Fence-1-7.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/VOF-Fence-1-7.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1569882355700-BIJ3RVGY737JO3I0FC8A/01_0209.jpg"
     },
     "vpf": {
       "name": "VPF (2 styles)",
@@ -160,7 +169,8 @@
       "sizes": [
         "Fence Heights: 39.4\"/47.2\"/59\"/70.9\"/78.7\""
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/VPF-Fence.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/VPF-Fence.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1569882494890-WVTW519K1RQPE0F3RSUU/01+IMG_7085.jpg"
     },
     "wf": {
       "name": "WF (8 styles)",
@@ -171,7 +181,8 @@
         "Fence Heights: 23.5\"/31.5\"/39.4\"/47.2\"",
         "Stack to 9.8'"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/WF-Fence.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/WF-Fence.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1616797708716-M6Q1K5K7PWT48TQDKEZ2/WM+Thumb.jpeg"
     },
     "cast-aluminum": {
       "name": "Cast Aluminum",
@@ -181,7 +192,8 @@
       "sizes": [
         "Fence heights: various, depending on style"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/Cast-Aluminum-Fence-KW.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/Cast-Aluminum-Fence-KW.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1569882638643-CXNZN599IB19VA3UGHLP/01_2841.jpg"
     },
     "fl": {
       "name": "FL (5 styles)",
@@ -192,7 +204,8 @@
         "Fence Heights: 23.5\"/31.5\"/39.4\"/47.2\"/55.2\"/63\"/70.8\"/78.7\"/98.4\"/118\"",
         "Panel Width: 1000mm or 2000mm"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/FL-Profile-LO.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/FL-Profile-LO.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1576798514959-TN7GK1SRO0VWC8GHD0WT/FL-F-IMG-01.jpg"
     },
     "bamboo": {
       "name": "Bamboo (3)",
@@ -204,7 +217,8 @@
         "Tall Heights: 35.4\"/47.2\"/59\"/70.8\"",
         "Panel Width: 1800mm"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/FTK-Bamboo.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/FTK-Bamboo.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1577146344635-1XMCUNZPX1SMY2NDYGB8/PVC+Bamboo+01.jpg"
     },
     "stacking": {
       "name": "Stacking",
@@ -214,7 +228,8 @@
       "sizes": [
         "Stack up to almost 10' (3 panels)"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/Stacking-Fence-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/Stacking-Fence-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1569882274071-PVL5SU8BE8L4095XVRL8/01_4285.jpg"
     },
     "lifting-fence": {
       "name": "Lifting Fence",
@@ -223,7 +238,8 @@
       "description": "Stacking posts can lift fence panels high (e.g. to use neighbor's wall). All residential fence panels can be \"lifted\" on stacking posts.",
       "sizes": [
         "Lift panels on stacking posts; stack to almost 10'"
-      ]
+      ],
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1590862338592-QAUXQ7DK8BJ65NLFYCR4/BNC-1-062_fence.jpg"
     },
     "fex": {
       "name": "FEX (8 Styles)",
@@ -234,7 +250,8 @@
         "Fence Heights: 23.5\"/31.5\"/39.4\"/47.2\"",
         "Stacked: up to 9.8'"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/FEX-Fence.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/FEX-Fence.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1569881470896-N5FLG2M8HGEVCHKI6J0S/01_+IMG_2019.jpg"
     }
   }
 }

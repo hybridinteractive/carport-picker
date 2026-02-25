@@ -21,9 +21,12 @@ const priceNote = computed(() => (product.value?.priceNote as string) ?? '')
 const attribution = computed(() => (product.value?.attribution as string) ?? '')
 const image = computed(() => (product.value?.image as string) ?? '')
 const galleryUrl = computed(() => (product.value?.galleryUrl as string) ?? '')
-const seriesDetails = computed(() => (product.value?.seriesDetails as Record<string, { name: string; description?: string; galleryUrl?: string; detailUrl?: string }>) ?? {})
+const seriesDetails = computed(() => (product.value?.seriesDetails as Record<string, { name: string; description?: string; galleryUrl?: string; detailUrl?: string; image?: string; sizes?: string[]; colors?: string }>) ?? {})
 const seriesEntries = computed(() => Object.entries(seriesDetails.value))
 const isSeriesRoute = computed(() => !!route.params.series)
+const showSeriesGrid = computed(() => (seriesEntries.value?.length ?? 0) > 0 && slug.value !== 'entry-doors')
+const isExternalSeriesLink = (info: { detailUrl?: string; description?: string; sizes?: unknown; colors?: unknown }) =>
+  !!info?.detailUrl?.startsWith('http') && !info?.description && !(Array.isArray(info?.sizes) && info.sizes.length) && !info?.colors
 </script>
 
 <template>
@@ -54,12 +57,55 @@ const isSeriesRoute = computed(() => !!route.params.series)
         <span aria-hidden="true">↗</span>
       </a>
       <div class="mt-8 space-y-4">
-        <section v-if="(seriesEntries ?? []).length">
+        <section v-if="showSeriesGrid" class="mt-8">
+          <h2 class="text-lg font-semibold text-stone-800">Series &amp; styles</h2>
+          <ul class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3" role="list">
+            <li v-for="[seriesSlug, info] in seriesEntries" :key="seriesSlug">
+              <a
+                v-if="isExternalSeriesLink(info)"
+                :href="info.detailUrl!"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex flex-col overflow-hidden rounded-lg border border-stone-200 bg-white shadow-sm transition hover:border-amber-300 hover:shadow-md"
+              >
+                <span class="block aspect-4/3 w-full shrink-0 overflow-hidden bg-stone-100">
+                  <img
+                    v-if="(info as { image?: string }).image"
+                    :src="(info as { image?: string }).image"
+                    :alt="info?.name ?? ''"
+                    class="h-full w-full object-cover transition group-hover:scale-[1.02]"
+                    loading="lazy"
+                  />
+                  <span v-else class="flex h-full w-full items-center justify-center text-2xl font-semibold text-stone-400">{{ info?.name?.charAt(0) ?? '?' }}</span>
+                </span>
+                <span class="flex flex-1 items-center justify-center p-3 text-center text-sm font-medium text-stone-800 group-hover:text-amber-700">{{ info?.name }} <span aria-hidden="true">↗</span></span>
+              </a>
+              <NuxtLink
+                v-else
+                :to="`/products/${slug}/${seriesSlug}`"
+                class="group flex flex-col overflow-hidden rounded-lg border border-stone-200 bg-white shadow-sm transition hover:border-amber-300 hover:shadow-md"
+              >
+                <span class="block aspect-4/3 w-full shrink-0 overflow-hidden bg-stone-100">
+                  <img
+                    v-if="(info as { image?: string }).image"
+                    :src="(info as { image?: string }).image"
+                    :alt="info?.name ?? ''"
+                    class="h-full w-full object-cover transition group-hover:scale-[1.02]"
+                    loading="lazy"
+                  />
+                  <span v-else class="flex h-full w-full items-center justify-center text-2xl font-semibold text-stone-400">{{ info?.name?.charAt(0) ?? '?' }}</span>
+                </span>
+                <span class="flex flex-1 items-center justify-center p-3 text-center text-sm font-medium text-stone-800 group-hover:text-amber-700">{{ info?.name }}</span>
+              </NuxtLink>
+            </li>
+          </ul>
+        </section>
+        <section v-else-if="(seriesEntries ?? []).length" class="mt-8">
           <h2 class="text-lg font-semibold text-stone-800">Series &amp; styles</h2>
           <ul class="mt-2 space-y-1 text-stone-600">
             <li v-for="[seriesSlug, info] in (seriesEntries ?? [])" :key="seriesSlug">
               <a
-                v-if="info?.detailUrl?.startsWith('http') && !info?.description && !(info?.sizes?.length) && !info?.colors"
+                v-if="isExternalSeriesLink(info)"
                 :href="info.detailUrl"
                 target="_blank"
                 rel="noopener noreferrer"

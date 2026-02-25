@@ -9,8 +9,8 @@ const { data: products } = await useFetch<Array<{ id: string; name: string; desc
     <p class="mt-2 text-stone-600">
       Premium Japanese aluminum carports, patio covers, gates, fences, and entry doors.
     </p>
-    <ul class="mt-10 space-y-6">
-      <li v-for="p in (products ?? [])" :key="p.id">
+    <ul class="mt-10 space-y-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <li v-for="p in (products ?? [])" :key="p.id" class="grid grid-rows-subgrid">
         <NuxtLink
           :to="`/products/${p.id}`"
           class="block overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm transition hover:border-amber-200 hover:shadow-md"

@@ -1,68 +1,123 @@
 {
   "name": "Patio Covers",
-  "image": "https://placehold.co/800x500/78716c/f5f5f4?text=Patio+Covers",
+  "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1577152981966-CB5651L0MQRF0DTZOGPX/06_2476.jpg",
   "galleryUrl": "https://www.kunkelworks.com/patio-gallery",
   "description": "Premium aluminum patio covers for shade and outdoor living. Styles include entry/walkway, awnings, add-a-room, balconies; corner units and side panels available. Straight or curved rafters; wall-mount or roof-mount.",
   "descriptionLong": "REVOLU and other Japanese aluminum patio systems from Sankyo-Tateyama. Straight rafters with strong gutter beam; posts can be positioned to suit. Width can be extended seamlessly. Standard width 12'; 18' units available. Typically wall-mounted; roof-mount possible with ledgers and brackets. Panel widths vary by projection (e.g. 36\" for 3'–8', 18\" for 9'–20'). Shop drawings and structural reports available from Japan.",
-  "series": ["REVOLU TF1NA", "REVOLU TR1NA", "REVOLU TF1MA", "REVOLU TR1MA", "Wood-Look", "Side Panels"],
-  "options": ["Roof mounting", "Panel types (clear, frosted, etc.)", "Custom installation", "Corner units", "Side panels", "Wall-mount or roof-mount"],
+  "series": [
+    "REVOLU TF1NA",
+    "REVOLU TR1NA",
+    "REVOLU TF1MA",
+    "REVOLU TR1MA",
+    "Wood-Look",
+    "Side Panels"
+  ],
+  "options": [
+    "Roof mounting",
+    "Panel types (clear, frosted, etc.)",
+    "Custom installation",
+    "Corner units",
+    "Side panels",
+    "Wall-mount or roof-mount"
+  ],
   "sizes": [
     "Projections: 3' to 20' (REVOLU); panel width 36\" for 3'–8', 18\" for 9'–20'",
     "Width: regular 12'; 18' units available; extendable",
     "Rafter sizes designed for projection; structural reports on request"
   ],
-  "finishes": ["Clear and frosted panels", "Wood-look option", "Color and finish options; see Product Details on KunkelWorks"],
+  "finishes": [
+    "Clear and frosted panels",
+    "Wood-look option",
+    "Color and finish options; see Product Details on KunkelWorks"
+  ],
   "priceNote": "Pricing by configuration; email specific requirements for quote.",
-  "benefits": ["Shade and rain protection", "Low maintenance", "Corrosion resistant", "Custom fit and extensions", "Japanese quality"],
+  "benefits": [
+    "Shade and rain protection",
+    "Low maintenance",
+    "Corrosion resistant",
+    "Custom fit and extensions",
+    "Japanese quality"
+  ],
   "attribution": "Product info from KunkelWorks (kunkelworks.com). For details and pricing: info@kunkelworks.com.",
   "seriesDetails": {
     "tf1na": {
       "name": "REVOLU TF1NA",
       "description": "The REVOLU TFNA has straight rafters, received by a strong gutter beam on the outside. Posts attach under this beam and can move left or right to accommodate a specific post location. The width can be seamlessly extended without limit. Regular width is 12', but 18' units can be ordered as well. Maximum projection is 20'. Projections 3' to 8' have a panel width of 36\"; projections 9' to 20' have a panel width of 18\". Rafter sizes are designed for these projections. Shop drawings and structural reports are available from Japan. Ordinarily attached to a house wall; can be roof-mounted with special ledgers and brackets.",
-      "sizes": ["Projections: 3' to 20'", "Panel width: 36\" for 3'–8', 18\" for 9'–20'", "Regular width 12'; 18' units available", "Width extendable without limit"],
+      "sizes": [
+        "Projections: 3' to 20'",
+        "Panel width: 36\" for 3'–8', 18\" for 9'–20'",
+        "Regular width 12'; 18' units available",
+        "Width extendable without limit"
+      ],
       "galleryUrl": "https://www.kunkelworks.com/patio-gallery",
       "detailUrl": "https://www.kunkelworks.com/tfna/",
-      "pdfUrl": "https://www.kunkelworks.com/s/REVOLU-2021.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/REVOLU-2021.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1577152981966-CB5651L0MQRF0DTZOGPX/06_2476.jpg"
     },
     "tr1na": {
       "name": "REVOLU TR1NA",
       "description": "The REVOLU TRNA has rafters curved on the outside edge, received by a strong gutter beam on the outside. Posts attach under this beam and can move left or right to accommodate a specific post location. While the projection is limited to 12', the width can be seamlessly extended without limit. Regular width is 12', but 18' units can be ordered as well. Projections 3' to 8' have a panel width of 36\"; projections 9' to 12' have a panel width of 18\".",
-      "sizes": ["Projections: 3' to 12'", "Panel width: 36\" for 3'–8', 18\" for 9'–12'", "Regular width 12'; 18' units available", "Width extendable without limit"],
+      "sizes": [
+        "Projections: 3' to 12'",
+        "Panel width: 36\" for 3'–8', 18\" for 9'–12'",
+        "Regular width 12'; 18' units available",
+        "Width extendable without limit"
+      ],
       "galleryUrl": "https://www.kunkelworks.com/patio-gallery",
       "detailUrl": "https://www.kunkelworks.com/trna/",
-      "pdfUrl": "https://www.kunkelworks.com/s/REVOLU-2021.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/REVOLU-2021.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1577153020399-6UV3YILF6HSG0LWMCT2Z/02_1522.jpg"
     },
     "tf1ma": {
       "name": "REVOLU TF1MA",
       "description": "The REVOLU TFMA features straight rafters and a bearing beam. The bearing beam allows flexible post placement: posts can move left or right, and the bearing beam can move forward or back. This enables a cantilever roof edge that can protect a banister or deck from the elements and helps with post setback issues. Maximum projection is 15'. Projections 3' to 8' have a panel width of 36\"; projections 9' to 15' have a panel width of 18\".",
-      "sizes": ["Projections: 3' to 15'", "Panel width: 36\" for 3'–8', 18\" for 9'–15'", "Regular width 12'; 18' units available", "Width extendable without limit"],
+      "sizes": [
+        "Projections: 3' to 15'",
+        "Panel width: 36\" for 3'–8', 18\" for 9'–15'",
+        "Regular width 12'; 18' units available",
+        "Width extendable without limit"
+      ],
       "galleryUrl": "https://www.kunkelworks.com/patio-gallery",
       "detailUrl": "https://www.kunkelworks.com/tfma/",
-      "pdfUrl": "https://www.kunkelworks.com/s/REVOLU-2021.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/REVOLU-2021.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1577153041687-JPV22V7P3ELEWZHSPLMI/01_5452.jpg"
     },
     "tr1ma": {
       "name": "REVOLU TR1MA",
       "description": "The REVOLU TRMA features rafters curved on the outside edge and a Bearing Beam. The bearing beam allows flexible post placement: posts can move left or right, and the bearing beam can move forward or back. This enables a cantilever roof edge that can protect a banister or deck from the elements and helps with post setback issues. Maximum projection is 15'. Projections 3' to 8' have a panel width of 36\"; projections 9' to 15' have a panel width of 18\". Ordinarily attached to a house wall; can be roof-mounted with special ledgers and brackets.",
-      "sizes": ["Projections: 3' to 15'", "Panel width: 36\" for 3'–8', 18\" for 9'–15'", "Regular width 12'; 18' units available", "Width extendable without limit"],
+      "sizes": [
+        "Projections: 3' to 15'",
+        "Panel width: 36\" for 3'–8', 18\" for 9'–15'",
+        "Regular width 12'; 18' units available",
+        "Width extendable without limit"
+      ],
       "galleryUrl": "https://www.kunkelworks.com/patio-gallery",
       "detailUrl": "https://www.kunkelworks.com/trma/",
-      "pdfUrl": "https://www.kunkelworks.com/s/REVOLU-2021.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/REVOLU-2021.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1577153069781-57P41PBUS5DH791LDNLR/01_2381.jpg"
     },
     "woodlook": {
       "name": "Wood-Look",
       "description": "The Wood-Look cover is made from the same aluminum profiles as the REVOLU Patio Covers. It has all the advantages of a canopy that will never rust and is protected from corrosion. The aluminum profiles are wrapped with a laminate changing the modern metallic appearance to a more traditional wooden look.",
-      "sizes": ["Projections: 3', 4', 5', 6', 7', 8', 9', 10'"],
+      "sizes": [
+        "Projections: 3', 4', 5', 6', 7', 8', 9', 10'"
+      ],
       "galleryUrl": "https://www.kunkelworks.com/patio-gallery",
       "detailUrl": "https://www.kunkelworks.com/woodlook-patio-covers/",
-      "pdfUrl": "https://www.kunkelworks.com/s/NN-Wood-look-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/NN-Wood-look-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1577153114966-W8LKQ3JKMK2M0MGF3AKV/01_4785.jpg"
     },
     "sidepanels": {
       "name": "Side Panels",
       "description": "Side panels are a natural addition to a patio cover. They are available in different heights with the 1100mm (3.6') panel being the most popular. You can stack side panels and create a full wall from top to bottom. They protect from sun, excessive rain, and gusts of wind, and provide additional privacy.",
-      "sizes": ["Heights vary; 1100mm (3.6') most popular", "Stackable for full wall"],
+      "sizes": [
+        "Heights vary; 1100mm (3.6') most popular",
+        "Stackable for full wall"
+      ],
       "galleryUrl": "https://www.kunkelworks.com/patio-gallery",
       "detailUrl": "https://www.kunkelworks.com/side-panels-lc/",
-      "pdfUrl": "https://www.kunkelworks.com/s/REVOLU-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/REVOLU-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1577153144393-6B72G2VH80GEHHP0S1WA/01_7691.jpg"
     }
   }
 }

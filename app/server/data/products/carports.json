@@ -1,6 +1,6 @@
 {
   "name": "Carports",
-  "image": "https://placehold.co/800x500/78716c/f5f5f4?text=Carports",
+  "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1588284151875-N26TTG4JHKRC57TEZVP7/PJW-5760_WH.jpg",
   "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
   "description": "Premium Japanese aluminum carports engineered for durability. Single, double, and triple configurations; residential and commercial; roof-mount and freestanding. Manufactured by Sankyo-Tateyama (Takaoka, Japan)—corrosion resistant and maintenance-free.",
   "descriptionLong": "KunkelWorks is the official distributor of authentic Japanese aluminum carports. Systems are meticulously crafted, tested, and inspected for shape, surface, color, and assembly. Resilient to humidity, rain, sea salt, and intense sunshine. Popular series include the PJR (soft curved roof, versatile for cantilever/double/triple), ELN (curved roofline on gutter side for extra shade and rain block), and many others. Side panels, roof mounting, and hurricane anchors available.",
@@ -62,7 +62,8 @@
       "priceRange": "Cantilever $5,000–$7,000; Double $8,000–$10,000; Triple $11,000–$13,000",
       "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
       "detailUrl": "https://www.kunkelworks.com/pjr/",
-      "pdfUrl": "https://www.kunkelworks.com/s/PJR-PORT-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/PJR-PORT-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1588284151875-N26TTG4JHKRC57TEZVP7/PJW-5760_WH.jpg"
     },
     "eln": {
       "name": "ELN Series",
@@ -76,7 +77,8 @@
       "priceRange": "Cantilever $6,000–$8,200; Double $9,800–$12,000",
       "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
       "detailUrl": "https://www.kunkelworks.com/eln-series/",
-      "pdfUrl": "https://www.kunkelworks.com/s/ELN-PORT.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/ELN-PORT.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1588284204328-M60I80Q0YMHSGFK0ESV3/ELN-5860-k.jpg"
     },
     "pjf": {
       "name": "PJF Series",
@@ -90,7 +92,8 @@
       "priceRange": "Cantilever $5,400–$7,300; Double $9,000–$10,800",
       "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
       "detailUrl": "https://www.kunkelworks.com/pjf-series/",
-      "pdfUrl": "https://www.kunkelworks.com/s/PJF-PORT-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/PJF-PORT-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1588284178984-AFX22NA9QXA40Q4YEJXA/PJF-5860_UC.jpg"
     },
     "mlr": {
       "name": "MLR Series",
@@ -104,7 +107,8 @@
       "priceRange": "Cantilever $6,000–$8,000; Double $10,000–$12,000",
       "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
       "detailUrl": "https://www.kunkelworks.com/mlr-series/",
-      "pdfUrl": "https://www.kunkelworks.com/s/MLR-PORT-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/MLR-PORT-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1588284225107-09COY8J5R4ZSCKFLQ4JY/MLC+5160+Beef.jpg"
     },
     "lj": {
       "name": "LJ Series",
@@ -119,7 +123,8 @@
       "priceRange": "Cantilever $6,000–$8,000; Double $9,500–$11,500; Triple $12,500–$15,500",
       "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
       "detailUrl": "https://www.kunkelworks.com/lj-series/",
-      "pdfUrl": "https://www.kunkelworks.com/s/LJ-PORT-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/LJ-PORT-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1588284245898-1K0I28XJ1QMRNOCU30DS/LJW_5848.jpg"
     },
     "kwc": {
       "name": "KWC Series",
@@ -132,7 +137,8 @@
       "priceRange": "Cantilever $11,500–$12,500",
       "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
       "detailUrl": "https://www.kunkelworks.com/kwc-series/",
-      "pdfUrl": "https://www.kunkelworks.com/s/KWC-PORT-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/KWC-PORT-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1588284263364-2P7JO3BS8O2ZJM1QFHH8/KWC-5854-2.jpg"
     },
     "skc": {
       "name": "SKC Port",
@@ -144,7 +150,8 @@
       ],
       "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
       "detailUrl": "https://www.kunkelworks.com/skc-port/",
-      "pdfUrl": "https://www.kunkelworks.com/s/SKC-Series-PDF.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/SKC-Series-PDF.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1620958563996-BF2M5GT2TB1E6A6GEUQD/SKC+HERO+MAIN.jpg"
     },
     "ustyle": {
       "name": "U-Style Port",
@@ -159,7 +166,8 @@
       "priceRange": "Single $8,000–$9,000; Double $12,000–$14,000; Triple $16,000–$22,000",
       "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
       "detailUrl": "https://www.kunkelworks.com/ustyle-series/",
-      "pdfUrl": "https://www.kunkelworks.com/s/U-Style-PORT-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/U-Style-PORT-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1588284321721-6C7K4W1A5UL42M45CE21/U-style.jpg"
     },
     "gss": {
       "name": "GSS Port",
@@ -175,7 +183,8 @@
       "priceRange": "Single $5,500–$6,500; Double $8,000–$9,500; Triple $11,000–$12,500",
       "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
       "detailUrl": "https://www.kunkelworks.com/gss-port/",
-      "pdfUrl": "https://www.kunkelworks.com/s/GSS-Port-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/GSS-Port-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1607981269397-BWH28I6JX4AYWECCDO6V/01_3777.jpg"
     },
     "css": {
       "name": "CSS Series",
@@ -190,7 +199,8 @@
         "Height: 23/25 (×100mm)",
         "Snow-loads: 50/100/150cm"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/CSS-Port-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/CSS-Port-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1579300811150-IXTAY4BH4CSEBL3XSS0O/CSS%2Bline%2Bw_sidepan.jpg"
     },
     "rsc": {
       "name": "RSC Port",
@@ -203,7 +213,8 @@
       ],
       "galleryUrl": "https://www.kunkelworks.com/carports-gallery",
       "detailUrl": "https://www.kunkelworks.com/rsc-series/",
-      "pdfUrl": "https://www.kunkelworks.com/s/RSC-Port-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/RSC-Port-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1588284292803-K16S75VEQR0GTG72OA1P/RSC-32.jpg"
     },
     "uec": {
       "name": "UEC Port",
@@ -215,7 +226,8 @@
         "Length units: 51/58 (×100mm)",
         "Height: 26/30 (×100mm)"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/UEC-PORT-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/UEC-PORT-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1579300887031-22Z0DYK5KJHKUVEPE40Y/UEC%2BPort%2BSidepan%2BImage.jpg"
     },
     "atld": {
       "name": "ATLD Port",
@@ -228,7 +240,8 @@
         "Length units: 55/60 (×100mm)",
         "Height: 25/30 (×100mm)"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/Atlade-PORT-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/Atlade-PORT-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1579300926260-79RMQXY799WW0J2QRSVI/01%2BAtlade%2BCover.jpg"
     },
     "sae": {
       "name": "SAE Port",
@@ -242,7 +255,8 @@
         "Length units: 54/58 (×100mm)",
         "Height: 23/26 (×100mm)"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/SAE-Aero-Shade-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/SAE-Aero-Shade-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1579300974224-L1FF6YYW1IUKQCFUA77X/01%2BnSpaceport-Double.jpg"
     },
     "mts": {
       "name": "MTS Port",
@@ -257,7 +271,8 @@
         "Length units: 28/49/54/58 (×100mm)",
         "Height: 23/26/30 (×100mm)"
       ],
-      "pdfUrl": "https://www.kunkelworks.com/s/MTS-Port-2019.pdf"
+      "pdfUrl": "https://www.kunkelworks.com/s/MTS-Port-2019.pdf",
+      "image": "https://images.squarespace-cdn.com/content/v1/5d436897932eb9000141e48f/1589518549693-148L1N8YJGGCVW2BESH0/Screen+Shot+2020-05-14+at+6.50.22+PM.jpg"
     }
   }
 }
