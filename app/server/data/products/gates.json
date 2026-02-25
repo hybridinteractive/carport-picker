@@ -3,13 +3,28 @@
   "image": "https://placehold.co/800x500/78716c/f5f5f4?text=Gates",
   "galleryUrl": "https://www.kunkelworks.com/gates/",
   "description": "Japanese aluminum entry gates, driveway gates, and pool gates. Custom fit, outward opening, spacers/stationary options; custom fabrication and lock options. Corrosion resistant and maintenance-free.",
-  "descriptionLong": "Sankyo-Tateyama aluminum gate systems distributed by KunkelWorks. Entry gate styles, driveway gates, and pool gates; custom fit and outward opening. Spacers and stationary panels available. Custom fabrication and lock options. Same meticulous Japanese fabrication as carports and patio covers—resilient to humidity, salt, and sun.",
-  "series": [],
+  "descriptionLong": "Sankyo-Tateyama aluminum gate systems distributed by KunkelWorks. Entry gate styles, driveway gates, and pool gates; custom fit and outward opening. Spacers and stationary panels available. Custom fabrication and lock options. Same meticulous Japanese fabrication as carports and patio covers—resilient to humidity, salt, and sun. Full gate series: kunkelworks.com/gate-series.",
+  "series": ["MCE Gates", "MCE-H Gates", "VOMC", "VPMC", "WM", "Cast Aluminum", "PVC Bamboo", "Sliding", "Other Gates", "MEX", "MF", "MLW", "MV"],
   "styles": ["Entry gate styles", "Driveway gates", "Pool gates", "Outward opening", "Spacers/stationary", "Custom fabrication", "Lock options"],
   "options": ["Custom fit", "Outward opening", "Spacers and stationary panels", "Custom fabrication", "Lock options"],
   "sizes": ["Custom sizes to fit opening; specify dimensions for quote"],
   "finishes": ["Anodized and coated aluminum; color options available"],
   "priceNote": "Pricing by size and options; email requirements for quote.",
   "benefits": ["Corrosion resistant", "Maintenance-free", "Secure", "Custom fit", "Japanese quality"],
-  "attribution": "Product info from KunkelWorks (kunkelworks.com). For details and pricing: info@kunkelworks.com."
+  "attribution": "Product info from KunkelWorks (kunkelworks.com). For details and pricing: info@kunkelworks.com. Gate series: kunkelworks.com/gate-series.",
+  "seriesDetails": {
+    "mce-gates": { "name": "MCE Gates (NEW)", "detailUrl": "https://www.kunkelworks.com/mce-gates/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
+    "mceh-gates": { "name": "MCE-H Gates (NEW)", "detailUrl": "https://www.kunkelworks.com/mceh-gates-new/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
+    "vomc": { "name": "VOMC (6 styles)", "detailUrl": "https://www.kunkelworks.com/vomc-series/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
+    "vpmc": { "name": "VPMC (2 styles)", "detailUrl": "https://www.kunkelworks.com/vpmc-series/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
+    "wm": { "name": "WM (10 styles)", "detailUrl": "https://www.kunkelworks.com/wm-series/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
+    "cast-aluminum-gates": { "name": "Cast Aluminum", "detailUrl": "https://www.kunkelworks.com/cast-aluminum-gates/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
+    "bamboo-gates": { "name": "PVC Bamboo (2)", "detailUrl": "https://www.kunkelworks.com/bamboo-gates/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
+    "sliding-gates": { "name": "Sliding (8 styles)", "detailUrl": "https://www.kunkelworks.com/sliding-gates/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
+    "other-gates": { "name": "Other Gates", "detailUrl": "https://www.kunkelworks.com/other-gates/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
+    "mex": { "name": "MEX (8 styles)", "detailUrl": "https://www.kunkelworks.com/mex-series/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
+    "mf": { "name": "MF (8 styles)", "detailUrl": "https://www.kunkelworks.com/mf-series/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
+    "mlw": { "name": "MLW (3 styles)", "detailUrl": "https://www.kunkelworks.com/mlw-series/", "galleryUrl": "https://www.kunkelworks.com/gates/" },
+    "mv": { "name": "MV (8 styles)", "detailUrl": "https://www.kunkelworks.com/mv-series/", "galleryUrl": "https://www.kunkelworks.com/gates/" }
+  }
 }

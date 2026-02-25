@@ -3,13 +3,39 @@
   "image": "https://placehold.co/800x500/78716c/f5f5f4?text=Fences",
   "galleryUrl": "https://www.kunkelworks.com/fences/",
   "description": "Aluminum fences: styles, railings, privacy walls, stacking, and lifting fence. Custom fit. Japanese aluminum—corrosion resistant and maintenance-free.",
-  "descriptionLong": "Sankyo-Tateyama aluminum fence systems from KunkelWorks. Multiple styles including railings, privacy walls, stacking, and lifting fence. Custom fit to your site. Same high-grade materials and quality control as carports and patio covers—resilient to humidity, rain, sea salt, and intense sunshine.",
-  "series": [],
+  "descriptionLong": "Sankyo-Tateyama aluminum fence systems from KunkelWorks. Multiple styles including railings, privacy walls, stacking, and lifting fence. Custom fit to your site. Same high-grade materials and quality control as carports and patio covers—resilient to humidity, rain, sea salt, and intense sunshine. Full fence styles: kunkelworks.com/fence-styles.",
+  "series": ["CEF Fence", "CEF-H Fence", "FIN", "FNG/FV", "FVE", "FVX", "REF", "SFC", "VOF", "VPF", "WF", "Cast Aluminum", "FL", "Bamboo", "Stacking", "Lifting Fence", "FEX"],
   "styles": ["Fence styles", "Railings", "Privacy walls", "Stacking", "Lifting fence", "Custom fit"],
   "options": ["Custom fit", "Privacy panels", "Railings", "Stacking and lifting options"],
   "sizes": ["Custom lengths and heights; specify dimensions for quote"],
   "finishes": ["Anodized and coated aluminum; color options available"],
   "priceNote": "Pricing by length, height, and style; email requirements for quote.",
   "benefits": ["Corrosion resistant", "Maintenance-free", "Privacy and security", "Custom fit", "Japanese quality"],
-  "attribution": "Product info from KunkelWorks (kunkelworks.com). For details and pricing: info@kunkelworks.com."
+  "attribution": "Product info from KunkelWorks (kunkelworks.com). For details and pricing: info@kunkelworks.com. Fence styles: kunkelworks.com/fence-styles.",
+  "seriesDetails": {
+    "cef-fence": { "name": "CEF Fence (NEW)", "detailUrl": "https://www.kunkelworks.com/cef-fence/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "cefh-fence": { "name": "CEF-H Fence (NEW)", "detailUrl": "https://www.kunkelworks.com/cefh-fence-new/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "fin": {
+      "name": "FIN (3 Styles)",
+      "description": "The FIN Fence System features decorative profiles on semi-private styles FIN-1 and FIN-2, and the solid style FIN-3, that can have a \"Japanese Style Topper.\"",
+      "colors": "Black, Deep Brown, Bronze and Urban Gray",
+      "sizes": ["Fence Heights: 23.5\"/31.5\"/39.4\"", "Panel Width: 6.5'"],
+      "detailUrl": "https://www.kunkelworks.com/fin/",
+      "galleryUrl": "https://www.kunkelworks.com/fences/"
+    },
+    "fngfv": { "name": "FNG/FV (3 styles)", "detailUrl": "https://www.kunkelworks.com/fngfv/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "fve": { "name": "FVE (3 styles)", "detailUrl": "https://www.kunkelworks.com/fve/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "fvx": { "name": "FVX (13 styles)", "detailUrl": "https://www.kunkelworks.com/fvx/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "ref": { "name": "REF (2 styles)", "detailUrl": "https://www.kunkelworks.com/repfreof/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "sfc": { "name": "SFC (13 styles)", "detailUrl": "https://www.kunkelworks.com/sfc/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "vof": { "name": "VOF (7 styles)", "detailUrl": "https://www.kunkelworks.com/vof/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "vpf": { "name": "VPF (2 styles)", "detailUrl": "https://www.kunkelworks.com/vpf/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "wf": { "name": "WF (8 styles)", "detailUrl": "https://www.kunkelworks.com/pagewf/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "cast-aluminum": { "name": "Cast Aluminum", "detailUrl": "https://www.kunkelworks.com/cast-aluminum/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "fl": { "name": "FL (5 styles)", "detailUrl": "https://www.kunkelworks.com/fence-fl/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "bamboo": { "name": "Bamboo (3)", "detailUrl": "https://www.kunkelworks.com/bamboo/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "stacking": { "name": "Stacking", "detailUrl": "https://www.kunkelworks.com/stacking/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "lifting-fence": { "name": "Lifting Fence", "detailUrl": "https://www.kunkelworks.com/lifting-fence/", "galleryUrl": "https://www.kunkelworks.com/fences/" },
+    "fex": { "name": "FEX (8 Styles)", "detailUrl": "https://www.kunkelworks.com/fex/", "galleryUrl": "https://www.kunkelworks.com/fences/" }
+  }
 }

@@ -16,6 +16,7 @@ interface SeriesDetail {
   name: string
   description?: string
   sizes?: string[]
+  colors?: string
   priceRange?: string
   pdfUrl?: string
   detailUrl?: string
@@ -37,11 +38,13 @@ interface ProductGroup {
   seriesDetails?: Record<string, SeriesDetail>
 }
 
-function formatSeriesDetail(key: string, s: SeriesDetail): string {
+function formatSeriesDetail(_key: string, s: SeriesDetail): string {
   const parts = [`### ${s.name}`]
   if (s.description) parts.push(s.description)
+  if (s.colors) parts.push(`Colors: ${s.colors}`)
   if (s.sizes?.length) parts.push(`Sizes: ${s.sizes.join('; ')}`)
   if (s.priceRange) parts.push(`Price range: ${s.priceRange}`)
+  if (s.detailUrl) parts.push(`Details: ${s.detailUrl}`)
   return parts.join('\n')
 }
 

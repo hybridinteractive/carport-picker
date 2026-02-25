@@ -14,6 +14,7 @@ interface SeriesInfo {
   description?: string
   image?: string
   sizes?: string[]
+  colors?: string
   priceRange?: string
   galleryUrl?: string
   detailUrl?: string
@@ -54,6 +55,10 @@ useHead({ title: () => `${series.value?.name ?? 'Series'} | ${productName.value}
       <h1 class="mt-4 text-3xl font-bold text-stone-900">{{ series.name }}</h1>
       <p v-if="series.description" class="mt-2 text-stone-600">{{ series.description }}</p>
 
+      <section v-if="series.colors" class="mt-6">
+        <h2 class="text-lg font-semibold text-stone-800">Colors</h2>
+        <p class="mt-2 text-stone-600">{{ series.colors }}</p>
+      </section>
       <section v-if="(seriesSizes ?? []).length" class="mt-6">
         <h2 class="text-lg font-semibold text-stone-800">Sizes & dimensions</h2>
         <ul class="mt-2 list-inside list-disc text-stone-600">

@@ -55,10 +55,20 @@ const isSeriesRoute = computed(() => !!route.params.series)
       </a>
       <div class="mt-8 space-y-4">
         <section v-if="(seriesEntries ?? []).length">
-          <h2 class="text-lg font-semibold text-stone-800">Series</h2>
+          <h2 class="text-lg font-semibold text-stone-800">Series &amp; styles</h2>
           <ul class="mt-2 space-y-1 text-stone-600">
             <li v-for="[seriesSlug, info] in (seriesEntries ?? [])" :key="seriesSlug">
-              <NuxtLink :to="`/products/${slug}/${seriesSlug}`" class="text-amber-700 hover:underline">{{ info?.name }}</NuxtLink>
+              <a
+                v-if="info?.detailUrl?.startsWith('http') && !info?.description && !(info?.sizes?.length) && !info?.colors"
+                :href="info.detailUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-amber-700 hover:underline"
+              >
+                {{ info?.name }}
+                <span aria-hidden="true">↗</span>
+              </a>
+              <NuxtLink v-else :to="`/products/${slug}/${seriesSlug}`" class="text-amber-700 hover:underline">{{ info?.name }}</NuxtLink>
             </li>
           </ul>
         </section>

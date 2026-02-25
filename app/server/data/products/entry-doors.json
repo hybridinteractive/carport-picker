@@ -1,9 +1,9 @@
 {
   "name": "Entry Doors",
   "image": "https://placehold.co/800x500/78716c/f5f5f4?text=Entry+Doors",
-  "galleryUrl": "https://www.kunkelworks.com/entry-doors",
+  "galleryUrl": "https://kunkelworks.com/door-gallery",
   "description": "Japanese aluminum entry doors from Sankyo-Tateyama. A major portion of their product line; KunkelWorks is introducing these systems to the US market. Enhanced security, elegant design, weather resistant.",
-  "descriptionLong": "Entry doors are a major portion of Sankyo Tateyama products. KunkelWorks is introducing these aluminum entry doors to the US market. Ventilated door and other styles available. Same meticulous Japanese fabrication—resistant to weather and wear.",
+  "descriptionLong": "Entry Doors are a major portion of the Sankyo Tateyama Products. KunkelWorks is just now starting to introduce these amazing doors to the US market. Ventilated door and other styles available. Same meticulous Japanese fabrication—resistant to weather and wear. Full details: kunkelworks.com/entry-doors.",
   "series": [],
   "styles": ["Ventilated door", "Additional styles in Japanese catalogs"],
   "options": ["Ventilated options", "Custom sizing and hardware"],
@@ -11,5 +11,10 @@
   "finishes": ["Aluminum; finish and color options; see Product Details"],
   "priceNote": "Pricing by size and style; email requirements for quote.",
   "benefits": ["Enhanced security", "Elegant design", "Weather resistant", "Japanese aluminum quality"],
-  "attribution": "Product info from KunkelWorks (kunkelworks.com). For details and pricing: info@kunkelworks.com."
+  "attribution": "Product info from KunkelWorks (kunkelworks.com). For details and pricing: info@kunkelworks.com. Entry doors: kunkelworks.com/entry-doors.",
+  "seriesDetails": {
+    "product-details": { "name": "Product Details", "detailUrl": "https://www.kunkelworks.com/entry-doors", "galleryUrl": "https://kunkelworks.com/door-gallery" },
+    "ventilated-door": { "name": "Ventilated Door", "detailUrl": "https://apps.st-grp.co.jp/iportal/CatalogViewInterfaceStartUpAction.do?catalogCategoryId=&catalogId=14089730000&designConfirmFlg=&designID=WCAT001&keyword=&method=startUp&mode=PAGE&pageGroupId=140&volumeID=STAWC001", "galleryUrl": "https://kunkelworks.com/door-gallery" },
+    "featured-projects": { "name": "Featured Projects", "detailUrl": "https://kunkelworks.com/door-gallery", "galleryUrl": "https://kunkelworks.com/door-gallery" }
+  }
 }
