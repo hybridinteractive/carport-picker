@@ -1,6 +1,9 @@
 <script setup lang="ts">
 const route = useRoute()
-const slug = computed(() => route.params.slug as string)
+const slug = computed(() => {
+  const p = route.params.slug
+  return Array.isArray(p) ? p[0] ?? '' : (p ?? '')
+})
 useHead({ title: () => `${product?.name ?? 'Product'} | Carport Picker` })
 
 const { data: products } = await useFetch<Array<Record<string, unknown>>>('/api/products')

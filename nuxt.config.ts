@@ -1,13 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { join } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
-
-const rootDir = fileURLToPath(new URL('.', import.meta.url))
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-01-01',
   devtools: { enabled: true },
+  devServer: { port: 3000 },
   srcDir: 'app',
 
   app: {
@@ -34,12 +31,6 @@ export default defineNuxtConfig({
     define: {
       global: 'globalThis',
     },
-    resolve: {
-      alias:
-        process.env.NODE_ENV !== 'production'
-          ? { '#app-manifest': join(rootDir, '.nuxt/manifest/meta/dev.json') }
-          : {},
-    },
   },
 
   sentry: {
@@ -56,12 +47,14 @@ export default defineNuxtConfig({
     resendApiKey: process.env.RESEND_API_KEY,
     resendFromEmail: process.env.RESEND_FROM_EMAIL,
     resendRecipientEmail: process.env.RESEND_RECIPIENT_EMAIL,
+    resendAdditionalRecipients: process.env.RESEND_ADDITIONAL_RECIPIENTS,
     tursoDatabaseUrl: process.env.TURSO_DATABASE_URL,
     tursoAuthToken: process.env.TURSO_AUTH_TOKEN,
   },
 
   nitro: {
     preset: 'cloudflare-pages',
+    scanDirs: ['app/server'],
     rollupConfig: {
       external: ['fs', 'path', 'sharp'],
     },

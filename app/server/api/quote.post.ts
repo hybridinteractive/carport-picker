@@ -34,7 +34,23 @@ export default defineEventHandler(async (event) => {
 
   const resendApiKey = config.resendApiKey
   const fromEmail = config.resendFromEmail || 'onboarding@resend.dev'
-  const businessEmail = config.resendRecipientEmail || config.resendFromEmail || null
+  const ctx = event.context as { cloudflare?: { env?: Record<string, string> }; env?: Record<string, string> }
+  const runtimeEnv = ctx.cloudflare?.env ?? ctx.env ?? {}
+  const additionalRecipientsRaw =
+    (typeof config.resendAdditionalRecipients === 'string' ? config.resendAdditionalRecipients : '') ||
+    (typeof runtimeEnv.RESEND_ADDITIONAL_RECIPIENTS === 'string' ? runtimeEnv.RESEND_ADDITIONAL_RECIPIENTS : '') ||
+    (typeof process.env.RESEND_ADDITIONAL_RECIPIENTS === 'string' ? process.env.RESEND_ADDITIONAL_RECIPIENTS : '')
+  const additional = additionalRecipientsRaw
+    .split(/[\s,]+/)
+    .map((e) => e.trim().replace(/^["']|["']$/g, ''))
+    .filter((e) => e.length > 0 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e))
+  const businessRecipients = [
+    config.resendRecipientEmail,
+    config.resendFromEmail,
+    'hi@hybridinteractive.io',
+    ...additional,
+  ].filter((e): e is string => typeof e === 'string' && e.length > 0)
+  const uniqueBusinessEmails = [...new Set(businessRecipients)]
 
   if (config.tursoDatabaseUrl) {
     try {
@@ -52,7 +68,7 @@ export default defineEventHandler(async (event) => {
     }
   }
 
-  if (!businessEmail && !email) {
+  if (uniqueBusinessEmails.length === 0 && !email) {
     return { success: true, message: 'Quote request submitted successfully' }
   }
 
@@ -70,10 +86,10 @@ export default defineEventHandler(async (event) => {
     <p><em>Submitted ${new Date().toLocaleString()}</em></p>
   `
 
-  if (businessEmail) {
+  if (uniqueBusinessEmails.length > 0) {
     await resend.emails.send({
       from: fromEmail,
-      to: businessEmail,
+      to: uniqueBusinessEmails,
       reply_to: email || undefined,
       subject: `Quote request from ${name}`,
       html: businessHtml,

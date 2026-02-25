@@ -1,5 +1,13 @@
 <script setup lang="ts">
-const { messages, loading, error, send } = useChat()
+const route = useRoute()
+const storedSession =
+  typeof localStorage !== 'undefined' ? localStorage.getItem('carport-chat-session') : null
+const initialSessionId = (route.query.session_id as string) ?? storedSession ?? null
+
+const { messages, sessionId, loading, loadingHistory, error, send } = useChat({
+  initialSessionId,
+  persistSession: true,
+})
 const input = ref('')
 const bottom = ref<HTMLElement | null>(null)
 
@@ -27,7 +35,10 @@ onMounted(() => {
     </div>
     <div class="flex max-h-[70vh] min-h-[320px] flex-1 flex-col overflow-hidden">
       <div class="flex-1 overflow-y-auto p-4 space-y-4">
-        <template v-if="messages.length === 0">
+        <template v-if="loadingHistory">
+          <p class="text-center text-sm text-stone-500">Loading conversation…</p>
+        </template>
+        <template v-else-if="messages.length === 0">
           <p class="text-center text-sm text-stone-500">Send a message to get started.</p>
         </template>
         <template v-else>
@@ -59,12 +70,12 @@ onMounted(() => {
             type="text"
             placeholder="Ask about products…"
             class="flex-1 rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
-            :disabled="loading"
+            :disabled="loading || loadingHistory"
           />
           <button
             type="submit"
             class="rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-700 disabled:opacity-50"
-            :disabled="loading || !input.trim()"
+            :disabled="loading || loadingHistory || !input.trim()"
           >
             Send
           </button>
