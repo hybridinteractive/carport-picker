@@ -14,9 +14,8 @@ compatibility_date = "2024-01-01"
 NODE_ENV = "production"
 CF_PAGES = "1"
 
-# Set these in .env or via wrangler secret put for production
+# Set these in .env or in Cloudflare Pages dashboard (Settings → Environment variables)
+# Do NOT add them here under [env.production.vars] or you may get "Binding name already in use"
 # TURSO_DATABASE_URL, TURSO_AUTH_TOKEN, NUXT_OPENAI_API_KEY
 # RESEND_API_KEY, RESEND_FROM_EMAIL, RESEND_RECIPIENT_EMAIL
 # NUXT_APP_BASE_URL, NUXT_COOKIE_SECRET, SENTRY_DSN
-
-NUXT_COOKIE_SECRET="{}QWERTYUIOP{}"
