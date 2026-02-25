@@ -24,14 +24,30 @@ interface ChatMessage {
   created_at: string
 }
 
+interface ChatSessionWithMessages {
+  session_id: string
+  updated_at: string
+  messages: ChatMessage[]
+}
+
 const lead = ref<Lead | null>(null)
-const chatMessages = ref<ChatMessage[]>([])
+const conversations = ref<ChatSessionWithMessages[]>([])
 const loading = ref(true)
 const error = ref('')
 
 const id = computed(() => {
   const p = route.params.id
   return Array.isArray(p) ? p[0] : p
+})
+
+const productSummary = computed(() => {
+  const l = lead.value
+  if (!l) return ''
+  const parts: string[] = []
+  if (l.product_interest) parts.push(l.product_interest.replace(/-/g, ' '))
+  if (l.series_slug) parts.push(l.series_slug)
+  else if (l.product_slug) parts.push(l.product_slug.replace(/-/g, ' '))
+  return parts.length ? parts.join(' · ') : ''
 })
 
 async function loadLead() {
@@ -42,16 +58,45 @@ async function loadLead() {
   }
   loading.value = true
   error.value = ''
+  conversations.value = []
   try {
     lead.value = await fetchWithAuth<Lead>(`/api/admin/leads/${id.value}`)
-    if (lead.value?.chat_session_id) {
-      const chat = await fetchWithAuth<{ messages: ChatMessage[] }>(
-        `/api/admin/chat/${encodeURIComponent(lead.value.chat_session_id)}`
+    const l = lead.value
+    if (!l) return
+
+    const sessionsByEmail: Array<{ session_id: string; updated_at: string }> = []
+    if (l.email?.trim()) {
+      const list = await fetchWithAuth<Array<{ session_id: string; updated_at: string }>>(
+        `/api/admin/sessions-by-email?email=${encodeURIComponent(l.email.trim())}`
       )
-      chatMessages.value = chat.messages ?? []
-    } else {
-      chatMessages.value = []
+      sessionsByEmail.push(...list)
     }
+    const linkedId = l.chat_session_id ?? ''
+    if (linkedId && !sessionsByEmail.some((s) => s.session_id === linkedId)) {
+      sessionsByEmail.unshift({ session_id: linkedId, updated_at: l.created_at })
+    }
+
+    const loaded: ChatSessionWithMessages[] = []
+    for (const s of sessionsByEmail) {
+      try {
+        const chat = await fetchWithAuth<{ session_id: string; messages: ChatMessage[] }>(
+          `/api/admin/chat/${encodeURIComponent(s.session_id)}`
+        )
+        loaded.push({
+          session_id: chat.session_id,
+          updated_at: s.updated_at,
+          messages: chat.messages ?? [],
+        })
+      } catch {
+        // skip sessions that fail to load
+      }
+    }
+    loaded.sort((a, b) => {
+      if (a.session_id === linkedId) return -1
+      if (b.session_id === linkedId) return 1
+      return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+    })
+    conversations.value = loaded
   } catch (e: unknown) {
     const err = e as { statusCode?: number }
     if (err?.statusCode === 401) {
@@ -77,6 +122,12 @@ function formatDate(d: string) {
     minute: '2-digit',
   })
 }
+
+function sessionLabel(session: ChatSessionWithMessages) {
+  return lead.value?.chat_session_id === session.session_id
+    ? 'Conversation (linked to this quote)'
+    : 'Other conversation'
+}
 </script>
 
 <template>
@@ -88,6 +139,12 @@ function formatDate(d: string) {
     <template v-else-if="lead">
       <div class="rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
         <h1 class="text-xl font-bold text-stone-900">{{ lead.name }}</h1>
+        <p
+          v-if="productSummary"
+          class="mt-2 rounded-lg bg-amber-50 px-3 py-1.5 text-sm font-medium text-amber-900"
+        >
+          Interested in: {{ productSummary }}
+        </p>
         <dl class="mt-4 grid gap-2 text-sm sm:grid-cols-2">
           <div v-if="lead.email">
             <dt class="text-stone-500">Email</dt>
@@ -124,24 +181,28 @@ function formatDate(d: string) {
         </div>
       </div>
 
-      <section v-if="chatMessages.length > 0" class="mt-8">
-        <h2 class="mb-4 text-lg font-semibold text-stone-800">Conversation</h2>
-        <div class="space-y-3 rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
-          <div
-            v-for="(msg, i) in chatMessages"
-            :key="i"
-            :class="[
-              'rounded-lg px-3 py-2 text-sm',
-              msg.role === 'user'
-                ? 'ml-8 bg-amber-100 text-stone-900'
-                : 'mr-8 bg-stone-100 text-stone-800'
-            ]"
-          >
-            <p class="text-xs text-stone-500">{{ formatDate(msg.created_at) }} · {{ msg.role }}</p>
-            <p class="mt-1 whitespace-pre-wrap">{{ msg.content }}</p>
+      <template v-for="(conv, cIdx) in conversations" :key="conv.session_id">
+        <section v-if="conv.messages.length > 0" class="mt-8">
+          <h2 class="mb-4 text-lg font-semibold text-stone-800">
+            {{ sessionLabel(conv) }}
+          </h2>
+          <div class="space-y-3 rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
+            <div
+              v-for="(msg, i) in conv.messages"
+              :key="`${cIdx}-${i}`"
+              :class="[
+                'rounded-lg px-3 py-2 text-sm',
+                msg.role === 'user'
+                  ? 'ml-8 bg-amber-100 text-stone-900'
+                  : 'mr-8 bg-stone-100 text-stone-800'
+              ]"
+            >
+              <p class="text-xs text-stone-500">{{ formatDate(msg.created_at) }} · {{ msg.role }}</p>
+              <p class="mt-1 whitespace-pre-wrap">{{ msg.content }}</p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </template>
     </template>
     <div v-else-if="loading" class="text-center text-stone-500">Loading…</div>
   </div>
