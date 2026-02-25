@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "imports": {
-    "#internal/nuxt/paths": "./node_modules/.pnpm/@nuxt+nitro-server@3.21.1_@libsql+client@0.14.0_db0@0.3.4_@libsql+client@0.14.0_drizzle_152230e1bb41901362e2ffcb35422820/node_modules/@nuxt/nitro-server/dist/runtime/utils/paths.mjs"
+    "#internal/nuxt/paths": "./node_modules/@nuxt/nitro-server/dist/runtime/utils/paths.mjs"
   },
   "scripts": {
     "build": "nuxt build",
@@ -27,6 +27,7 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@vitejs/plugin-basic-ssl": "^1.1.0",
     "@tailwindcss/vite": "^4.0.0",
     "dotenv": "^16.6.1",
     "drizzle-kit": "^0.30.0",

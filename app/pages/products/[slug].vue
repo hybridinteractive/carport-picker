@@ -4,10 +4,11 @@ const slug = computed(() => {
   const p = route.params.slug
   return Array.isArray(p) ? p[0] ?? '' : (p ?? '')
 })
-useHead({ title: () => `${product?.name ?? 'Product'} | Carport Picker` })
 
 const { data: products } = await useFetch<Array<Record<string, unknown>>>('/api/products')
 const product = computed(() => products.value?.find((p) => p.id === slug.value))
+
+useHead({ title: () => `${product.value?.name ?? 'Product'} | Carport Picker` })
 
 const series = computed(() => (product.value?.series as string[]) ?? [])
 const styles = computed(() => (product.value?.styles as string[]) ?? [])
