@@ -15,7 +15,8 @@
     "fetch-product-images": "node scripts/fetch-kunkelworks-images.mjs",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "db:fix-quote-columns": "node scripts/apply-quote-sales-migration.mjs"
   },
   "dependencies": {
     "@libsql/client": "^0.14.0",

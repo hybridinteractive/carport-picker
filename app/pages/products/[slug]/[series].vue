@@ -105,7 +105,7 @@ useHead({ title: () => `${series.value?.name ?? 'Series'} | ${productName.value}
 
       <div class="mt-10 flex flex-wrap gap-4">
         <NuxtLink
-          to="/quote"
+          :to="`/quote?product_interest=${encodeURIComponent(slug)}&product=${encodeURIComponent(slug)}&series=${encodeURIComponent(seriesSlug)}`"
           class="inline-flex rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-700"
         >
           Get a quote

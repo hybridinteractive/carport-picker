@@ -1,8 +1,28 @@
 <script setup lang="ts">
 useHead({ title: 'Get a quote | Carport Picker' })
+const route = useRoute()
+
 const submitted = ref(false)
 const loading = ref(false)
 const error = ref<string | null>(null)
+
+const productSlugFromQuery = computed(() => {
+  const p = route.query.product
+  return typeof p === 'string' ? p : ''
+})
+const seriesSlugFromQuery = computed(() => {
+  const s = route.query.series
+  return typeof s === 'string' ? s : ''
+})
+const sessionIdFromQuery = computed(() => {
+  const sid = route.query.session_id
+  return typeof sid === 'string' ? sid : ''
+})
+const productInterestFromQuery = computed(() => {
+  const pi = route.query.product_interest
+  return typeof pi === 'string' ? pi : ''
+})
+
 const form = ref({
   name: '',
   email: '',
@@ -10,6 +30,7 @@ const form = ref({
   product_interest: '',
   message: '',
 })
+
 const productOptions = [
   { value: '', label: 'Select…' },
   { value: 'carports', label: 'Carports' },
@@ -18,6 +39,15 @@ const productOptions = [
   { value: 'fences', label: 'Fences' },
   { value: 'entry-doors', label: 'Entry Doors' },
 ]
+
+onMounted(() => {
+  if (productInterestFromQuery.value && productOptions.some((o) => o.value === productInterestFromQuery.value)) {
+    form.value.product_interest = productInterestFromQuery.value
+  }
+  if (productSlugFromQuery.value && !form.value.product_interest) {
+    form.value.product_interest = productSlugFromQuery.value
+  }
+})
 
 async function onSubmit() {
   if (!form.value.name.trim()) return
@@ -36,6 +66,10 @@ async function onSubmit() {
         phone: form.value.phone?.trim() || undefined,
         message: form.value.message?.trim() || undefined,
         product_interest: form.value.product_interest || undefined,
+        product_slug: productSlugFromQuery.value || undefined,
+        series_slug: seriesSlugFromQuery.value || undefined,
+        session_id: sessionIdFromQuery.value || undefined,
+        source: sessionIdFromQuery.value ? 'chat' : 'form',
       },
     })
     submitted.value = true

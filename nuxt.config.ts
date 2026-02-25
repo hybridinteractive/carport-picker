@@ -57,6 +57,8 @@ export default defineNuxtConfig({
     tursoAuthToken: process.env.TURSO_AUTH_TOKEN,
     appBaseUrl: process.env.NUXT_APP_BASE_URL || 'http://localhost:3000',
     cookieSecret: process.env.NUXT_COOKIE_SECRET,
+    adminSecret: (process.env.NUXT_ADMIN_SECRET ?? '').trim(),
+    quoteWebhookUrl: process.env.QUOTE_WEBHOOK_URL,
   },
 
   nitro: {

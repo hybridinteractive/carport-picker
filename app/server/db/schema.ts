@@ -39,5 +39,9 @@ export const quoteSubmissions = sqliteTable('quote_submissions', {
   phone: text('phone'),
   message: text('message'),
   productInterest: text('product_interest'),
+  productSlug: text('product_slug'),
+  seriesSlug: text('series_slug'),
+  chatSessionId: text('chat_session_id'),
+  source: text('source', { enum: ['form', 'chat'] }),
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
 })

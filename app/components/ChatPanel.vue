@@ -46,6 +46,13 @@ const isVerifiedForCurrentEmail = computed(
     emailForSaveRestore.value.trim().toLowerCase() === verifiedEmail.value.toLowerCase()
 )
 
+const quoteUrl = computed(() => {
+  const params = new URLSearchParams()
+  if (sessionId.value) params.set('session_id', sessionId.value)
+  const q = params.toString()
+  return q ? `/quote?${q}` : '/quote'
+})
+
 function submit() {
   const text = input.value.trim()
   if (!text) return
@@ -170,8 +177,18 @@ onMounted(() => {
 <template>
   <div class="flex flex-col rounded-xl border border-stone-200 bg-white shadow-sm">
     <div class="border-b border-stone-200 px-4 py-3">
-      <h2 class="text-lg font-semibold text-stone-800">Chat with an expert</h2>
-      <p class="text-sm text-stone-500">Ask about carports, patio covers, gates, fences, or entry doors.</p>
+      <div class="flex items-start justify-between gap-2">
+        <div>
+          <h2 class="text-lg font-semibold text-stone-800">Chat with an expert</h2>
+          <p class="text-sm text-stone-500">Ask about carports, patio covers, gates, fences, or entry doors.</p>
+        </div>
+        <NuxtLink
+          :to="quoteUrl"
+          class="shrink-0 rounded-lg border border-amber-600 bg-amber-50 px-3 py-1.5 text-sm font-medium text-amber-800 hover:bg-amber-100"
+        >
+          Get a quote
+        </NuxtLink>
+      </div>
     </div>
     <div class="flex max-h-[70vh] min-h-[320px] flex-1 flex-col overflow-hidden">
       <div class="flex-1 overflow-y-auto p-4 space-y-4">

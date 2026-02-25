@@ -165,7 +165,7 @@ const isExternalSeriesLink = (info: { detailUrl?: string; description?: string; 
           Chat with an expert
         </NuxtLink>
         <NuxtLink
-          to="/quote"
+          :to="`/quote?product_interest=${encodeURIComponent(slug)}&product=${encodeURIComponent(slug)}`"
           class="inline-flex rounded-lg border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50"
         >
           Get a quote

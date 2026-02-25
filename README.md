@@ -1,6 +1,6 @@
 # Carport Picker
 
-Nuxt 3 app for KunkelWorks: premium Japanese aluminum carports, patio covers, gates, fences, and entry doors. Includes product browsing, chat with an expert (OpenAI), quote requests, and chat history tied to user email (with optional magic-link verification).
+Nuxt 3 app for KunkelWorks: premium Japanese aluminum carports, patio covers, gates, fences, and entry doors. Includes product browsing, chat with an expert (OpenAI), quote requests (with contextual product/series and optional chat-session link), chat history tied to user email (magic-link verification), a sales admin dashboard for leads and conversation context, and an optional webhook for new quotes (CRM/Zapier).
 
 ## Quick start
 

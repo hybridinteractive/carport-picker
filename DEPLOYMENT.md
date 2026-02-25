@@ -23,6 +23,8 @@ Copy `.env.example` to `.env` and set:
 | `RESEND_RECIPIENT_EMAIL` | Recommended | Where to receive quote requests |
 | `NUXT_APP_BASE_URL` | Yes (for magic-link email) | Full site URL, e.g. `https://your-project.pages.dev` |
 | `NUXT_COOKIE_SECRET` | Yes (for chat email verification) | Long random string; signs the verified-email cookie. Set as **Encrypted** in the dashboard. |
+| `NUXT_ADMIN_SECRET` | Optional | Password for the sales admin dashboard at `/admin`. If unset, admin API returns 503. |
+| `QUOTE_WEBHOOK_URL` | Optional | URL to POST new quote payloads (for CRM/Zapier/Make). |
 | `SENTRY_DSN` | Optional | Sentry DSN for error reporting |
 
 ### Cloudflare Pages (dashboard)

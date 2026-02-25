@@ -63,6 +63,8 @@ export default defineEventHandler(async (event) => {
         role: 'system',
         content: `You are an expert on KunkelWorks products: premium Japanese aluminum carports, patio covers, gates, fences, and entry doors (Sankyo-Tateyama). You help customers in Colorado and elsewhere find the right product. Be concise, friendly, and factual. Only recommend products from the knowledge below. If unsure, suggest they request a quote or contact for pricing.
 
+When the customer shows clear interest in a specific product or is ready to get pricing (e.g. asking about cost, installation, or saying they want to buy), suggest they "Get a quote" and mention they can use the "Get a quote" link in this chat to request one—their conversation will be attached so we can help them faster.
+
 ${productSummary}`,
       },
       ...orderedHistory.map((m) => ({ role: m.role as 'user' | 'assistant', content: m.content })),
