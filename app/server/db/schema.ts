@@ -16,6 +16,22 @@ export const chatMessages = sqliteTable('chat_messages', {
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
 })
 
+export const magicLinks = sqliteTable('magic_links', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  token: text('token').notNull().unique(),
+  email: text('email').notNull(),
+  intent: text('intent', { enum: ['link_session', 'list_sessions'] }).notNull(),
+  sessionId: text('session_id'),
+  createdAt: integer('created_at', { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
+  expiresAt: integer('expires_at', { mode: 'timestamp' }).notNull(),
+})
+
+export const rateLimits = sqliteTable('rate_limits', {
+  key: text('key').primaryKey(),
+  count: integer('count').notNull().default(0),
+  windowEnd: integer('window_end', { mode: 'timestamp' }).notNull(),
+})
+
 export const quoteSubmissions = sqliteTable('quote_submissions', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   name: text('name').notNull(),

@@ -12,10 +12,13 @@ const {
   loading,
   loadingHistory,
   error,
+  verifiedEmail,
   send,
   loadHistory,
   linkSessionToEmail,
   fetchSessionsByEmail,
+  requestMagicLink,
+  refreshVerifiedEmail,
 } = useChat({
   initialSessionId,
   persistSession: true,
@@ -30,6 +33,18 @@ const sessionsLoading = ref(false)
 const pastSessions = ref<ChatSessionSummary[]>([])
 const sessionsFetched = ref(false)
 const emailSectionOpen = ref(false)
+const magicLinkSent = ref(false)
+const magicLinkLoading = ref(false)
+const queryLinked = ref(false)
+const queryVerifiedEmail = ref(false)
+const queryErrorExpired = ref(false)
+
+const isVerifiedForCurrentEmail = computed(
+  () =>
+    !!verifiedEmail.value &&
+    !!emailForSaveRestore.value.trim() &&
+    emailForSaveRestore.value.trim().toLowerCase() === verifiedEmail.value.toLowerCase()
+)
 
 function submit() {
   const text = input.value.trim()
@@ -40,7 +55,22 @@ function submit() {
 
 async function handleSaveToEmail() {
   const email = emailForSaveRestore.value.trim()
-  if (!email || linkLoading.value) return
+  if (!email || linkLoading.value || magicLinkLoading.value) return
+  if (!isVerifiedForCurrentEmail.value) {
+    magicLinkLoading.value = true
+    magicLinkSent.value = false
+    try {
+      await requestMagicLink({
+        email,
+        intent: 'link_session',
+        session_id: sessionId.value ?? undefined,
+      })
+      magicLinkSent.value = true
+    } finally {
+      magicLinkLoading.value = false
+    }
+    return
+  }
   linkLoading.value = true
   linkSuccess.value = false
   try {
@@ -53,7 +83,18 @@ async function handleSaveToEmail() {
 
 async function handleLoadMyChats() {
   const email = emailForSaveRestore.value.trim()
-  if (!email || sessionsLoading.value) return
+  if (!email || sessionsLoading.value || magicLinkLoading.value) return
+  if (!isVerifiedForCurrentEmail.value) {
+    magicLinkLoading.value = true
+    magicLinkSent.value = false
+    try {
+      await requestMagicLink({ email, intent: 'list_sessions' })
+      magicLinkSent.value = true
+    } finally {
+      magicLinkLoading.value = false
+    }
+    return
+  }
   sessionsLoading.value = true
   pastSessions.value = []
   sessionsFetched.value = false
@@ -90,9 +131,38 @@ onMounted(() => {
     () => nextTick(() => bottom.value?.scrollIntoView({ behavior: 'smooth' })),
     { flush: 'post' }
   )
+
   const prefillEmail = route.query.email
   if (typeof prefillEmail === 'string' && prefillEmail.trim()) {
     emailForSaveRestore.value = prefillEmail.trim()
+    queryVerifiedEmail.value = true
+    emailSectionOpen.value = true
+  }
+  if (route.query.linked === '1') {
+    linkSuccess.value = true
+    queryLinked.value = true
+    emailSectionOpen.value = true
+  }
+  if (route.query.error === 'expired') {
+    queryErrorExpired.value = true
+    emailSectionOpen.value = true
+  }
+
+  if (emailSectionOpen.value) {
+    refreshVerifiedEmail().then(async () => {
+      if (queryVerifiedEmail.value && emailForSaveRestore.value.trim()) {
+        sessionsLoading.value = true
+        sessionsFetched.value = false
+        try {
+          pastSessions.value = await fetchSessionsByEmail(emailForSaveRestore.value)
+        } catch {
+          pastSessions.value = []
+        } finally {
+          sessionsLoading.value = false
+          sessionsFetched.value = true
+        }
+      }
+    })
   }
 })
 </script>
@@ -163,6 +233,21 @@ onMounted(() => {
         <span class="inline-block text-stone-400 transition-transform" :class="emailSectionOpen ? 'rotate-180' : ''">▼</span>
       </button>
       <div v-show="emailSectionOpen" class="border-t border-stone-100 bg-stone-50/50 px-4 pb-4 pt-2">
+        <p v-if="queryErrorExpired" class="mb-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">
+          Verification link expired. Please request a new one.
+        </p>
+        <p v-if="queryLinked" class="mb-2 rounded-lg border border-green-200 bg-green-50 px-3 py-2 text-sm text-green-800">
+          This chat is now saved to your email.
+        </p>
+        <p v-if="queryVerifiedEmail && !magicLinkSent && !sessionsLoading" class="mb-2 text-sm text-green-700">
+          Verified. You can load your past chats below.
+        </p>
+        <p v-if="isVerifiedForCurrentEmail && verifiedEmail && !magicLinkSent" class="mb-2 text-sm text-stone-600">
+          Verified as {{ verifiedEmail }}
+        </p>
+        <p v-if="magicLinkSent" class="mb-2 rounded-lg border border-amber-100 bg-amber-50/50 px-3 py-2 text-sm text-amber-800">
+          Check your email and click the link to continue.
+        </p>
         <div class="flex flex-wrap items-end gap-2">
           <label class="flex-1 min-w-[200px]">
             <span class="sr-only">Your email</span>
@@ -177,23 +262,40 @@ onMounted(() => {
             <button
               type="button"
               class="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm font-medium text-stone-700 hover:bg-stone-100 disabled:opacity-50"
-              :disabled="!sessionId || messages.length === 0 || !emailForSaveRestore.trim() || linkLoading"
+              :disabled="!sessionId || messages.length === 0 || !emailForSaveRestore.trim() || linkLoading || magicLinkLoading"
               @click="handleSaveToEmail"
             >
-              {{ linkLoading ? 'Saving…' : 'Save this chat to my email' }}
+              {{
+                magicLinkLoading
+                  ? 'Sending…'
+                  : linkLoading
+                    ? 'Saving…'
+                    : !isVerifiedForCurrentEmail
+                      ? 'Send verification email to save'
+                      : 'Save this chat to my email'
+              }}
             </button>
             <button
               type="button"
               class="rounded-lg border border-amber-600 bg-amber-600 px-3 py-2 text-sm font-medium text-white hover:bg-amber-700 disabled:opacity-50"
-              :disabled="!emailForSaveRestore.trim() || sessionsLoading"
+              :disabled="!emailForSaveRestore.trim() || sessionsLoading || magicLinkLoading"
               @click="handleLoadMyChats"
             >
-              {{ sessionsLoading ? 'Loading…' : 'Load my chats' }}
+              {{
+                magicLinkLoading
+                  ? 'Sending…'
+                  : sessionsLoading
+                    ? 'Loading…'
+                    : !isVerifiedForCurrentEmail
+                      ? 'Send verification email to load chats'
+                      : 'Load my chats'
+              }}
             </button>
           </div>
         </div>
-        <p v-if="linkSuccess" class="mt-2 text-sm text-green-700">Chat saved to your email.</p>
-        <div v-if="pastSessions.length > 0" class="mt-3">
+        <p v-if="linkSuccess && !queryLinked" class="mt-2 text-sm text-green-700">Chat saved to your email.</p>
+        <p v-if="sessionsLoading" class="mt-2 text-sm text-stone-500">Loading your chats…</p>
+        <div v-else-if="pastSessions.length > 0" class="mt-3">
           <p class="mb-2 text-sm font-medium text-stone-700">Your past chats</p>
           <ul class="space-y-1">
             <li

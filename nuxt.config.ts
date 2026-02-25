@@ -55,6 +55,8 @@ export default defineNuxtConfig({
     resendAdditionalRecipients: process.env.RESEND_ADDITIONAL_RECIPIENTS,
     tursoDatabaseUrl: process.env.TURSO_DATABASE_URL,
     tursoAuthToken: process.env.TURSO_AUTH_TOKEN,
+    appBaseUrl: process.env.NUXT_APP_BASE_URL || 'http://localhost:3000',
+    cookieSecret: process.env.NUXT_COOKIE_SECRET,
   },
 
   nitro: {

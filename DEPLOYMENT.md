@@ -21,18 +21,27 @@ Copy `.env.example` to `.env` and set:
 | `RESEND_API_KEY` | Yes (for quote email) | Resend API key |
 | `RESEND_FROM_EMAIL` | Recommended | Sender address (defaults to Resend onboarding) |
 | `RESEND_RECIPIENT_EMAIL` | Recommended | Where to receive quote requests |
+| `NUXT_APP_BASE_URL` | Yes (for magic-link email) | Full site URL, e.g. `https://your-project.pages.dev` |
+| `NUXT_COOKIE_SECRET` | Yes (for chat email verification) | Long random string; signs the verified-email cookie. Set as **Encrypted** in the dashboard. |
 | `SENTRY_DSN` | Optional | Sentry DSN for error reporting |
+
+### Cloudflare Pages (dashboard)
+
+If you deploy via the Cloudflare Pages dashboard (Git connection): set all variables under **Project → Settings → Environment variables**. For **NUXT_COOKIE_SECRET**, use a long random value (e.g. `openssl rand -hex 32`) and mark it as **Encrypted** so it is not exposed in build logs. Without this secret, chat-by-email magic-link verification will not work.
+
+### Wrangler CLI
 
 For production with Wrangler CLI, set secrets:
 
 ```bash
-wrangler secret put TURSO_AUTH_TOKEN
-wrangler secret put NUXT_OPENAI_API_KEY
-wrangler secret put RESEND_API_KEY
+pnpm exec wrangler secret put TURSO_AUTH_TOKEN
+pnpm exec wrangler secret put NUXT_OPENAI_API_KEY
+pnpm exec wrangler secret put RESEND_API_KEY
+pnpm exec wrangler secret put NUXT_COOKIE_SECRET
 # etc.
 ```
 
-Or use a `.env` file when running `wrangler pages deploy` (do not commit `.env`).
+Note: `wrangler secret put` applies to **Workers**. For **Pages** deploys (`wrangler pages deploy`), use the dashboard for env vars or pass them via a `.env` file when running the deploy (do not commit `.env`).
 
 ## Database migrations
 

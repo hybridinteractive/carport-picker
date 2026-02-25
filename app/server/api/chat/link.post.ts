@@ -1,5 +1,6 @@
 import { eq } from 'drizzle-orm'
 import { chatSessions } from '../../db/schema'
+import { getVerifiedEmail } from '../../utils/verifiedEmail'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -16,6 +17,14 @@ export default defineEventHandler(async (event) => {
   }
   if (!EMAIL_REGEX.test(email)) {
     throw createError({ statusCode: 400, statusMessage: 'Invalid email address format' })
+  }
+
+  const verifiedEmail = await getVerifiedEmail(event)
+  if (verifiedEmail !== email) {
+    throw createError({
+      statusCode: 401,
+      statusMessage: 'Please verify your email first by clicking the link we sent you.',
+    })
   }
 
   const db = useDb()

@@ -18,6 +18,8 @@ export interface UseChatOptions {
   persistSession?: boolean
 }
 
+export type MagicLinkIntent = 'link_session' | 'list_sessions'
+
 export function useChat(options: UseChatOptions = {}) {
   const { initialSessionId, persistSession = true } = options
   const messages = ref<ChatMessage[]>([])
@@ -25,6 +27,7 @@ export function useChat(options: UseChatOptions = {}) {
   const loading = ref(false)
   const loadingHistory = ref(false)
   const error = ref<string | null>(null)
+  const verifiedEmail = ref<string | null>(null)
 
   async function loadHistory(sid: string) {
     if (loadingHistory.value) return
@@ -79,6 +82,42 @@ export function useChat(options: UseChatOptions = {}) {
     return res ?? []
   }
 
+  async function requestMagicLink(payload: {
+    email: string
+    intent: MagicLinkIntent
+    session_id?: string
+  }): Promise<void> {
+    const email = payload.email.trim()
+    if (!email) {
+      error.value = 'Email is required'
+      return
+    }
+    error.value = null
+    try {
+      await $fetch('/api/chat/request-magic-link', {
+        method: 'POST',
+        body: {
+          email,
+          intent: payload.intent,
+          session_id: payload.session_id ?? undefined,
+        },
+      })
+    } catch (e: unknown) {
+      const err = e as { data?: { statusMessage?: string }; message?: string }
+      error.value = err?.data?.statusMessage ?? err?.message ?? 'Failed to send verification email'
+      throw e
+    }
+  }
+
+  async function refreshVerifiedEmail(): Promise<void> {
+    try {
+      const res = await $fetch<{ email: string } | null>('/api/chat/verified-email')
+      verifiedEmail.value = res?.email ?? null
+    } catch {
+      verifiedEmail.value = null
+    }
+  }
+
   async function send(userContent: string) {
     if (!userContent.trim() || loading.value) return
     const content = userContent.trim()
@@ -107,6 +146,7 @@ export function useChat(options: UseChatOptions = {}) {
     if (initialSessionId?.trim()) {
       loadHistory(initialSessionId.trim())
     }
+    refreshVerifiedEmail()
   })
 
   return {
@@ -115,9 +155,12 @@ export function useChat(options: UseChatOptions = {}) {
     loading,
     loadingHistory,
     error,
+    verifiedEmail,
     send,
     loadHistory,
     linkSessionToEmail,
     fetchSessionsByEmail,
+    requestMagicLink,
+    refreshVerifiedEmail,
   }
 }
