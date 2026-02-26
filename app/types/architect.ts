@@ -41,10 +41,12 @@ export interface GenerationConfig {
   placement: string
   carportReferenceImage: string | null
   houseReferenceImage: string | null
-  metalColor: MetalColor
-  roofPanelType: RoofPanelType
-  aluminumPanelColor: AluminumPanelColor | null
-  polycarbonatePanelType: PolycarbonatePanelType | null
+  /** Frame color name (from carports.json customizationOptions.frameColors or legacy enum) */
+  metalColor: string
+  /** Roof type name (e.g. "Aluminum", "Polycarbonate (Lexan)") */
+  roofPanelType: string
+  aluminumPanelColor: string | null
+  polycarbonatePanelType: string | null
 }
 
 export interface GenerationState {

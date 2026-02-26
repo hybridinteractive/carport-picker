@@ -127,7 +127,7 @@
             <p class="text-xs text-stone-500 mt-1">Required only if "Custom (Upload Image)" is selected below.</p>
           </div>
 
-          <!-- House style -->
+          <!-- House style (architect types; not in carports.json) -->
           <div class="mb-6">
             <label class="block text-sm font-medium text-stone-700 mb-2">House style</label>
             <select
@@ -159,7 +159,7 @@
                   v-model="config.metalColor"
                   class="w-full bg-white border border-stone-300 rounded-lg px-3 py-2 text-sm text-stone-900 focus:ring-2 focus:ring-amber-500 outline-none"
                 >
-                  <option v-for="c in MetalColorList" :key="c" :value="c">{{ c }}</option>
+                  <option v-for="c in customization.frameColors" :key="c.id" :value="c.name">{{ c.name }}</option>
                 </select>
               </div>
               <div>
@@ -169,25 +169,25 @@
                   class="w-full bg-white border border-stone-300 rounded-lg px-3 py-2 text-sm text-stone-900 focus:ring-2 focus:ring-amber-500 outline-none"
                   @change="onRoofPanelTypeChange"
                 >
-                  <option v-for="t in RoofPanelTypeList" :key="t" :value="t">{{ t }}</option>
+                  <option v-for="t in customization.roofPanelTypes" :key="t.id" :value="t.name">{{ t.name }}</option>
                 </select>
               </div>
-              <div v-if="config.roofPanelType === RoofPanelType.ALUMINUM">
+              <div v-if="isAluminumRoof">
                 <label class="block text-xs font-medium text-stone-600 mb-1">Aluminum panel color</label>
                 <select
                   v-model="config.aluminumPanelColor"
                   class="w-full bg-white border border-stone-300 rounded-lg px-3 py-2 text-sm text-stone-900 focus:ring-2 focus:ring-amber-500 outline-none"
                 >
-                  <option v-for="c in AluminumPanelColorList" :key="c" :value="c">{{ c }}</option>
+                  <option v-for="c in customization.aluminumPanelColors" :key="c.id" :value="c.name">{{ c.name }}</option>
                 </select>
               </div>
-              <div v-if="config.roofPanelType === RoofPanelType.POLYCARBONATE">
+              <div v-if="isPolycarbonateRoof">
                 <label class="block text-xs font-medium text-stone-600 mb-1">Polycarbonate panel</label>
                 <select
                   v-model="config.polycarbonatePanelType"
                   class="w-full bg-white border border-stone-300 rounded-lg px-3 py-2 text-sm text-stone-900 focus:ring-2 focus:ring-amber-500 outline-none"
                 >
-                  <option v-for="t in PolycarbonatePanelTypeList" :key="t" :value="t">{{ t }}</option>
+                  <option v-for="t in customization.polycarbonatePanelTypes" :key="t.id" :value="t.name">{{ t.name }}</option>
                 </select>
               </div>
             </div>
@@ -300,10 +300,6 @@
 <script setup lang="ts">
 import {
   HouseStyle,
-  MetalColor,
-  RoofPanelType,
-  AluminumPanelColor,
-  PolycarbonatePanelType,
   type GenerationConfig,
   type GenerationState,
   type CarportOption,
@@ -312,23 +308,45 @@ import {
 useHead({ title: 'Carport Builder' })
 
 const HouseStyleList = Object.values(HouseStyle)
-const MetalColorList = Object.values(MetalColor)
-const RoofPanelTypeList = Object.values(RoofPanelType)
-const AluminumPanelColorList = Object.values(AluminumPanelColor)
-const PolycarbonatePanelTypeList = Object.values(PolycarbonatePanelType)
 
-const { data: carportOptionsData } = await useFetch<CarportOption[]>('/api/visualizer/carport-options')
-const carportOptions = computed(() => carportOptionsData.value ?? [])
+interface CustomizationItem {
+  id: string
+  name: string
+}
+interface VisualizerOptionsResponse {
+  carportOptions: CarportOption[]
+  customization: {
+    frameColors: CustomizationItem[]
+    roofPanelTypes: CustomizationItem[]
+    aluminumPanelColors: CustomizationItem[]
+    polycarbonatePanelTypes: CustomizationItem[]
+  }
+}
+
+const { data: optionsData } = await useFetch<VisualizerOptionsResponse>('/api/visualizer/options')
+const carportOptions = computed(() => optionsData.value?.carportOptions ?? [])
+const rawCustomization = computed(() => optionsData.value?.customization)
+const customization = computed(() => {
+  const r = rawCustomization.value
+  return {
+    frameColors: r?.frameColors?.length ? r.frameColors : [{ id: 'urban-gray', name: 'Urban Gray (UC)' }],
+    roofPanelTypes: r?.roofPanelTypes?.length ? r.roofPanelTypes : [{ id: 'aluminum', name: 'Aluminum' }, { id: 'polycarbonate', name: 'Polycarbonate (Lexan)' }],
+    aluminumPanelColors: r?.aluminumPanelColors?.length ? r.aluminumPanelColors : [{ id: 'urban-gray', name: 'Urban Gray Aluminum' }],
+    polycarbonatePanelTypes: r?.polycarbonatePanelTypes?.length ? r.polycarbonatePanelTypes : [{ id: 'blue', name: 'Blue Panel' }],
+  }
+})
+const isAluminumRoof = computed(() => config.value.roofPanelType === 'Aluminum')
+const isPolycarbonateRoof = computed(() => config.value.roofPanelType === 'Polycarbonate (Lexan)')
 
 const config = ref<GenerationConfig>({
   style: HouseStyle.MINIMALIST,
   placement: 'rear side offset',
   carportReferenceImage: null,
   houseReferenceImage: null,
-  metalColor: MetalColor.URBAN_GRAY,
-  roofPanelType: RoofPanelType.POLYCARBONATE,
+  metalColor: 'Urban Gray (UC)',
+  roofPanelType: 'Polycarbonate (Lexan)',
   aluminumPanelColor: null,
-  polycarbonatePanelType: PolycarbonatePanelType.BLUE,
+  polycarbonatePanelType: 'Blue Panel',
 })
 
 const state = ref<GenerationState>({
@@ -368,11 +386,11 @@ function markAsChanged() {
 
 function onRoofPanelTypeChange() {
   const type = config.value.roofPanelType
-  if (type === RoofPanelType.ALUMINUM) {
-    config.value.aluminumPanelColor = AluminumPanelColor.URBAN_GRAY
+  if (type === 'Aluminum') {
+    config.value.aluminumPanelColor = customization.value.aluminumPanelColors[0]?.name ?? 'Urban Gray Aluminum'
     config.value.polycarbonatePanelType = null
   } else {
-    config.value.polycarbonatePanelType = PolycarbonatePanelType.BLUE
+    config.value.polycarbonatePanelType = customization.value.polycarbonatePanelTypes[0]?.name ?? 'Blue Panel'
     config.value.aluminumPanelColor = null
   }
   markAsChanged()
